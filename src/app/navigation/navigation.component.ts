@@ -10,6 +10,8 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class NavigationComponent {
 
+  public darkMode = false;
+
   public readonly menu: Array<MenuItem> = [
     {
       path: 'base64',
@@ -28,6 +30,10 @@ export class NavigationComponent {
     );
 
   constructor(private breakpointObserver: BreakpointObserver) { }
+
+  public toggleTheme() {
+
+  }
 
 }
 

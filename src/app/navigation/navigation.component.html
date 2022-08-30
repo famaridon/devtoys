@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="sidenav-container" [ngClass]="{'dark-theme': darkMode}">
   <mat-sidenav
     #drawer
     class="sidenav"
@@ -21,11 +21,11 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async"
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>devtoys-web</span>
+      <mat-slide-toggle [(ngModel)]="darkMode"><mat-icon aria-hidden="false" aria-label="Toggle light mode" fontIcon="dark_mode"></mat-icon>Dark mode</mat-slide-toggle>
     </mat-toolbar>
     <div>
       <router-outlet></router-outlet>

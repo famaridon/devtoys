@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Base64RoutingModule } from './base64-routing.module';
 import { Base64Component } from './base64.component';
 import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     Base64RoutingModule,
-    FormsModule
+    FormsModule,
+    MatInputModule
   ]
 })
 export class Base64Module { }
