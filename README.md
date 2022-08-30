@@ -2,6 +2,45 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
 
+## Roadmap
+
+- [X] DarkMode (most important feature in 2022)
+- [X] PWA 
+
+- Converters
+  - [ ] JSON <> YAML
+  - [ ] Timestamp
+  - [ ] Number Base
+  - [ ] Cron Parser
+- Encoders / Decoders
+  - [ ] HTML
+  - [ ] URL
+  - [ ] Base64 Text 
+  - [ ] Base64 Image
+  - [ ] GZip
+  - [ ] JWT Decoder
+- Formatters
+  - [ ] JSON
+  - [ ] SQL
+  - [ ] XML
+- Generators
+  - [ ] Hash (MD5, SHA1, SHA256, SHA512)
+  - [ ] UUID 1 and 4
+  - [ ] Lorem Ipsum
+  - [ ] Checksum
+- Text
+  - [ ] Escape / Unescape
+  - [ ] Inspector & Case Converter
+  - [ ] Regex Tester
+  - [ ] Text Comparer
+  - [ ] XML Validator
+  - [ ] Markdown Preview
+- Graphic
+  - [ ] Color Blindness Simulator
+  - [ ] Color Picker & Contrast
+  - [ ] PNG / JPEG Compressor
+  - [ ] Image Converter
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
