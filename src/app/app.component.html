@@ -26,6 +26,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>{{ title }}</span>
+      <div class="flex-spacer"></div>
       <mat-slide-toggle 
       [ngModel]="darkMode"
       (ngModelChange)="toggleDarkMode($event)"
