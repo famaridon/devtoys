@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import {  MatButtonModule } from '@angular/material/button';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CoreModule } from 'src/app/core/core.module';
+import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 
 @NgModule({
   declarations: [
@@ -29,8 +30,19 @@ import { CoreModule } from 'src/app/core/core.module';
     BrowserAnimationsModule,
     CoreModule,
     SharedModule,
+    HighlightModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HIGHLIGHT_OPTIONS,
+      useValue: {
+        coreLibraryLoader: () => import('highlight.js/lib/core'),
+        languages: {
+          json: () => import('highlight.js/lib/languages/json'),
+        }
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -52,3 +52,5 @@ $dark-theme: mat.define-dark-theme((
  @include mat.form-field-color($dark-theme);
 
 }
+
+@import '~highlight.js/styles/github.css';

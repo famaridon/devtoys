@@ -20,7 +20,11 @@ export class AppComponent {
     {
       path: 'uuid',
       label: 'UUID'
-    }
+    },
+    {
+      path: 'json-formatter',
+      label: 'JSON'
+    },
   ]
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
