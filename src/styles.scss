@@ -37,6 +37,7 @@ $dark-theme: mat.define-dark-theme((
 @include mat.toolbar-theme($light-theme);
 @include mat.sidenav-theme($light-theme);
 @include mat.slide-toggle-theme($light-theme);
+@include mat.form-field-theme($light-theme);
 
 // Apply the light theme only when the `.dark-theme` CSS class is applied
 // to an ancestor element of the components (such as `body`).
@@ -48,5 +49,6 @@ $dark-theme: mat.define-dark-theme((
  @include mat.toolbar-color($dark-theme);
  @include mat.sidenav-color($dark-theme);
  @include mat.slide-toggle-color($dark-theme);
+ @include mat.form-field-color($dark-theme);
 
 }

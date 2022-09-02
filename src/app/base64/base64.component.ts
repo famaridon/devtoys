@@ -28,6 +28,7 @@ export class Base64Component implements OnInit {
   constructor(private base64Service: Base64Service) { }
 
   ngOnInit(): void {
+    this.text = 'Enter some text or base64.'
   }
 
 }

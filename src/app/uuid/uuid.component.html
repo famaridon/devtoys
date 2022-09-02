@@ -5,14 +5,14 @@
       Generate
     </button></mat-card-title
   >
-  <div>
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Favorite food</mat-label>
-      <input matInput [ngModel]="v4" />
+  <div class="list">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>UUID v4</mat-label>
+      <input matInput [ngModel]="v4" readonly=""/>
     </mat-form-field>
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Favorite food</mat-label>
-      <input matInput [ngModel]="v1" />
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>UUID v1</mat-label>
+      <input matInput [ngModel]="v1" readonly="true" />
     </mat-form-field>
   </div>
 </mat-card>

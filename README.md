@@ -25,7 +25,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   - [ ] XML
 - Generators
   - [ ] Hash (MD5, SHA1, SHA256, SHA512)
-  - [ ] UUID 1 and 4
+  - [X] UUID 1 and 4
   - [ ] Lorem Ipsum
   - [ ] Checksum
 - Text
