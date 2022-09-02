@@ -1,15 +1,17 @@
-<div>
-  <mat-form-field>
-    <label for="base64">Base64</label>
+<div class="side-by-side">
+  <mat-card class="panel">
+    <mat-card-title>Base64</mat-card-title>
     <textarea
       matInput
       type="text"
       name="base64"
+      rows="5"
       [(ngModel)]="base64"
     ></textarea>
-  </mat-form-field>
-  <mat-form-field>
-    <label for="text">text</label>
-    <textarea matInput type="text" name="text" [(ngModel)]="text"></textarea>
-  </mat-form-field>
+  </mat-card>
+  <div class="flex-spacer"></div>
+  <mat-card class="panel">
+    <mat-card-title>Text</mat-card-title>
+    <textarea matInput type="text" name="text" rows="5" [(ngModel)]="text"></textarea>
+  </mat-card>
 </div>
