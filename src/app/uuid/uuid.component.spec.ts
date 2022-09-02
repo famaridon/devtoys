@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { UuidComponent } from './uuid.component';
 
 describe('UuidComponent', () => {

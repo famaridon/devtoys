@@ -1,1 +1,18 @@
-<p>uuid works!</p>
+<mat-card>
+  <mat-card-title
+    >UUID
+    <button mat-button color="primary" (click)="generate()">
+      Generate
+    </button></mat-card-title
+  >
+  <div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Favorite food</mat-label>
+      <input matInput [ngModel]="v4" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Favorite food</mat-label>
+      <input matInput [ngModel]="v1" />
+    </mat-form-field>
+  </div>
+</mat-card>
