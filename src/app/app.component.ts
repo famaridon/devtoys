@@ -1,8 +1,8 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, Renderer2 } from '@angular/core';
 import { map, Observable, shareReplay } from 'rxjs';
+import { UserPreference, UserPreferenceService } from 'src/app/core/user-preference.service';
 
-const DARK_MODE_KEY = 'darkMode';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +10,8 @@ const DARK_MODE_KEY = 'darkMode';
 })
 export class AppComponent {
   public title = 'devtoys';
-  public darkMode = false;
+  public colorMode: 'light_mode' | 'dark_mode' = 'light_mode';
+
 
   public readonly menu: Array<MenuItem> = [
     {
@@ -33,24 +34,20 @@ export class AppComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, private renderer: Renderer2) {
-    this.toggleDarkMode(localStorage.getItem(DARK_MODE_KEY) === 'true' ? true : false);
-    onstorage = (event) => { 
-      if(event.key === DARK_MODE_KEY){
-        this.toggleDarkMode(event.newValue === 'true' ? true : false);
-      }
-    };
-   }
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private renderer: Renderer2,
+    private userPreferenceService: UserPreferenceService) {
+    this.userPreferenceService.userPreference$.subscribe((userPreference) => {
+      this.colorMode = userPreference.color;
+      this.renderer.removeClass(document.body, 'light_mode');
+      this.renderer.removeClass(document.body, 'dark_mode');
+      this.renderer.addClass(document.body, userPreference.color);
+    });
+  }
 
-  public toggleDarkMode(event: boolean): void{
-    this.darkMode = event;
-    if(this.darkMode) {
-      this.renderer.addClass(document.body, 'dark-theme');
-      localStorage.setItem(DARK_MODE_KEY, "true");
-    } else {
-      this.renderer.removeClass(document.body, 'dark-theme');
-      localStorage.setItem(DARK_MODE_KEY, "false");
-    }
+  public toggleColorMode(): void {
+    this.userPreferenceService.toggleColorMode();
   }
 }
 

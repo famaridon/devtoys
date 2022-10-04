@@ -20,7 +20,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   - [ ] GZip
   - [ ] JWT Decoder
 - Formatters
-  - [ ] JSON
+  - [X] JSON
   - [ ] SQL
   - [ ] XML
 - Generators

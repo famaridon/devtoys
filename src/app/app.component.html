@@ -27,16 +27,11 @@
       </button>
       <span>{{ title }}</span>
       <div class="flex-spacer"></div>
-      <mat-slide-toggle 
-      [ngModel]="darkMode"
-      (ngModelChange)="toggleDarkMode($event)"
-        ><mat-icon
-          aria-hidden="false"
-          aria-label="Toggle light mode"
-          fontIcon="dark_mode"
-        ></mat-icon
-        >Dark mode</mat-slide-toggle
-      >
+      <button mat-button (click)="toggleColorMode()"><mat-icon
+        aria-hidden="false"
+        aria-label="Toggle light mode"
+        [fontIcon]="colorMode"
+      ></mat-icon></button>
     </mat-toolbar>
     <div class="main-container">
       <router-outlet></router-outlet>

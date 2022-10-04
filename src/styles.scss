@@ -41,7 +41,7 @@ $dark-theme: mat.define-dark-theme((
 
 // Apply the light theme only when the `.dark-theme` CSS class is applied
 // to an ancestor element of the components (such as `body`).
-.dark-theme {
+.dark-mode {
  @include mat.core-color($dark-theme);
  @include mat.card-color($dark-theme);
  @include mat.button-color($dark-theme);
