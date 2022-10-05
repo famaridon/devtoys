@@ -2,7 +2,6 @@
 @use 'sass:map';
 
 @mixin encoder-decoder-color($color) {
-  @debug map.get(map.get($color, 'background'), 'card');
   .encoder-decoder {
     .mat-list-item {
       background-color: map.get(map.get($color, 'background'), 'card');
