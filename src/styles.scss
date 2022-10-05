@@ -3,34 +3,41 @@
 @use 'sass:map';
 @import './scss/_configuration';
 @import './scss/_encoder-decoder';
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
 
 @include mat.core();
 
 // Define a light theme
 $light-primary: mat.define-palette(mat.$indigo-palette);
 $light-accent: mat.define-palette(mat.$pink-palette);
-$light-theme: mat.define-light-theme((
- color: (
-   primary: $light-primary,
-   accent: $light-accent,
- ),
- background: "black"
-));
+$light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $light-primary,
+      accent: $light-accent,
+    ),
+    background: 'black',
+  )
+);
 
 // Define a dark theme
 $dark-primary: mat.define-palette(mat.$pink-palette);
 $dark-accent: mat.define-palette(mat.$blue-grey-palette);
-$dark-theme: mat.define-dark-theme((
- color: (
-   primary: $dark-primary,
-   accent: $dark-accent,
- )
-));
-
+$dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $dark-primary,
+      accent: $dark-accent,
+    ),
+  )
+);
 
 // Apply the dark theme by default
 @include mat.core-theme($light-theme);
@@ -44,25 +51,24 @@ $dark-theme: mat.define-dark-theme((
 @include mat.divider-theme($light-theme);
 @include mat.list-theme($light-theme);
 
-
 @include configuration-theme($light-theme);
 @include encoder-decoder-theme($light-theme);
 
 // Apply the light theme only when the `.dark-theme` CSS class is applied
 // to an ancestor element of the components (such as `body`).
 .dark-mode {
- @include mat.core-color($dark-theme);
- @include mat.card-color($dark-theme);
- @include mat.button-color($dark-theme);
- @include mat.input-color($dark-theme);
- @include mat.toolbar-color($dark-theme);
- @include mat.sidenav-color($dark-theme);
- @include mat.slide-toggle-color($dark-theme);
- @include mat.form-field-color($dark-theme);
- @include mat.divider-color($dark-theme);
- @include mat.list-color($dark-theme);
- @include configuration-color($dark-theme);
- @include encoder-decoder-color($dark-theme);
+  @include mat.core-color($dark-theme);
+  @include mat.card-color($dark-theme);
+  @include mat.button-color($dark-theme);
+  @include mat.input-color($dark-theme);
+  @include mat.toolbar-color($dark-theme);
+  @include mat.sidenav-color($dark-theme);
+  @include mat.slide-toggle-color($dark-theme);
+  @include mat.form-field-color($dark-theme);
+  @include mat.divider-color($dark-theme);
+  @include mat.list-color($dark-theme);
+  @include configuration-color($dark-theme);
+  @include encoder-decoder-color($dark-theme);
 }
 
 @import '~highlight.js/styles/github.css';

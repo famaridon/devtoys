@@ -9,15 +9,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-import {  MatButtonModule } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CoreModule } from 'src/app/core/core.module';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,12 +23,12 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWhenStable:30000',
     }),
     BrowserAnimationsModule,
     CoreModule,
     SharedModule,
-    HighlightModule
+    HighlightModule,
   ],
   providers: [
     {
@@ -39,10 +37,10 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
         coreLibraryLoader: () => import('highlight.js/lib/core'),
         languages: {
           json: () => import('highlight.js/lib/languages/json'),
-        }
-      }
-    }
+        },
+      },
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

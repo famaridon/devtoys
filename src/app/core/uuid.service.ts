@@ -2,11 +2,10 @@ import { Injectable } from '@angular/core';
 import { v1 as uuidv1, v4 as uuidv4 } from 'uuid';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UUIDService {
-
-  constructor() { }
+  constructor() {}
 
   public v1(): string {
     return uuidv1();

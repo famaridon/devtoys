@@ -5,18 +5,14 @@ import { JsonFormatterComponent } from './json-formatter.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { HighlightModule } from 'ngx-highlightjs';
 
-
 @NgModule({
-  declarations: [
-    JsonFormatterComponent
-  ],
+  declarations: [JsonFormatterComponent],
   imports: [
     CommonModule,
     JsonFormatterRoutingModule,
     SharedModule,
-    HighlightModule
+    HighlightModule,
   ],
-  providers: [
-  ]
+  providers: [],
 })
-export class JsonFormatterModule { }
+export class JsonFormatterModule {}

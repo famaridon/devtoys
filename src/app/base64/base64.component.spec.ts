@@ -8,9 +8,8 @@ describe('Base64Component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Base64Component ]
-    })
-    .compileComponents();
+      declarations: [Base64Component],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(Base64Component);
     component = fixture.componentInstance;

@@ -1,14 +1,13 @@
 <mat-card class="data">
-    <mat-card-title>JSON Data</mat-card-title>
-    <textarea
+  <mat-card-title>JSON Data</mat-card-title>
+  <textarea
     matInput
     type="text"
     name="base64"
     rows="10"
-    [(ngModel)]="raw"
-  ></textarea>
+    [(ngModel)]="raw"></textarea>
 </mat-card>
 <mat-card>
-    <mat-card-title>Result</mat-card-title>
-    <pre><code [highlight]="formatted"></code></pre>
+  <mat-card-title>Result</mat-card-title>
+  <pre><code [highlight]="formatted"></code></pre>
 </mat-card>

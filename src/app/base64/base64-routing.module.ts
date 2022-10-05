@@ -6,6 +6,6 @@ const routes: Routes = [{ path: '', component: Base64Component }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class Base64RoutingModule { }
+export class Base64RoutingModule {}

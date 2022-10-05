@@ -4,8 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Roadmap
 
-- [X] DarkMode (most important feature in 2022)
-- [X] PWA 
+- [x] DarkMode (most important feature in 2022)
+- [x] PWA
 
 - Converters
   - [ ] JSON <> YAML
@@ -15,17 +15,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Encoders / Decoders
   - [ ] HTML
   - [ ] URL
-  - [ ] Base64 Text 
+  - [ ] Base64 Text
   - [ ] Base64 Image
   - [ ] GZip
   - [ ] JWT Decoder
 - Formatters
-  - [X] JSON
+  - [x] JSON
   - [ ] SQL
   - [ ] XML
 - Generators
   - [ ] Hash (MD5, SHA1, SHA256, SHA512)
-  - [X] UUID 1 and 4
+  - [x] UUID 1 and 4
   - [ ] Lorem Ipsum
   - [ ] Checksum
 - Text

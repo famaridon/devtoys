@@ -11,11 +11,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 
-
 @NgModule({
   declarations: [],
-  imports: [
-  ],
+  imports: [],
   exports: [
     CommonModule,
     MatToolbarModule,
@@ -30,6 +28,6 @@ import { MatDividerModule } from '@angular/material/divider';
     MatButtonModule,
     FormsModule,
     MatDividerModule,
-  ]
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

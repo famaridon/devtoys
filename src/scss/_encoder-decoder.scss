@@ -1,37 +1,35 @@
 @use '@angular/material' as mat;
 @use 'sass:map';
 
-
 @mixin encoder-decoder-color($color) {
-    @debug map.get(map.get($color, 'background'), 'card');
-    .encoder-decoder {
-      .mat-list-item {
-        background-color: map.get(map.get($color, 'background'), 'card');
-        border-color: grey;
-      }
+  @debug map.get(map.get($color, 'background'), 'card');
+  .encoder-decoder {
+    .mat-list-item {
+      background-color: map.get(map.get($color, 'background'), 'card');
+      border-color: grey;
     }
-    
   }
-  
-  @mixin encoder-decoder-theme($theme) {
-    .encoder-decoder {
-      .input {
-        textarea {
-          border-radius: 5px;
-          width: 100%;
-        }
-      }
-      .output {
-        textarea {
-          border-radius: 5px;
-          width: 100%;
-        }
-      }
-    }
+}
 
-    $color: mat.get-color-config($theme);
-  
-    @if $color != null {
-      @include configuration-color($color);
+@mixin encoder-decoder-theme($theme) {
+  .encoder-decoder {
+    .input {
+      textarea {
+        border-radius: 5px;
+        width: 100%;
+      }
+    }
+    .output {
+      textarea {
+        border-radius: 5px;
+        width: 100%;
+      }
     }
   }
+
+  $color: mat.get-color-config($theme);
+
+  @if $color != null {
+    @include configuration-color($color);
+  }
+}

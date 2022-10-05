@@ -7,9 +7,8 @@ describe('UuidComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UuidComponent ]
-    })
-    .compileComponents();
+      declarations: [UuidComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(UuidComponent);
     component = fixture.componentInstance;

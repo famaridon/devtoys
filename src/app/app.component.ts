@@ -1,19 +1,21 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, Renderer2 } from '@angular/core';
 import { map, Observable, shareReplay } from 'rxjs';
-import { UserPreference, UserPreferenceService } from 'src/app/core/user-preference.service';
+import {
+  UserPreference,
+  UserPreferenceService,
+} from 'src/app/core/user-preference.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   public title = 'devtoys';
   public colorMode: 'light_mode' | 'dark_mode' = 'light_mode';
 
-
-  public readonly menu: Category[]=  [
+  public readonly menu: Category[] = [
     {
       label: 'Converters',
       icon: 'EncodersDecoders.svg',
@@ -21,9 +23,9 @@ export class AppComponent {
         {
           path: 'base64',
           icon: 'Base64EncoderDecoder.svg',
-          label: 'Base64'
+          label: 'Base64',
         },
-      ]
+      ],
     },
     {
       label: 'Generators',
@@ -32,9 +34,9 @@ export class AppComponent {
         {
           path: 'uuid',
           icon: 'UuidGenerator.svg',
-          label: 'UUID'
+          label: 'UUID',
         },
-      ]
+      ],
     },
     {
       label: 'Formatters',
@@ -43,13 +45,14 @@ export class AppComponent {
         {
           path: 'json-formatter',
           icon: 'JsonFormatter.svg',
-          label: 'JSON'
+          label: 'JSON',
         },
-      ]
+      ],
     },
-  ]
+  ];
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  isHandset$: Observable<boolean> = this.breakpointObserver
+    .observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
       shareReplay()
@@ -58,8 +61,9 @@ export class AppComponent {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private renderer: Renderer2,
-    private userPreferenceService: UserPreferenceService) {
-    this.userPreferenceService.userPreference$.subscribe((userPreference) => {
+    private userPreferenceService: UserPreferenceService
+  ) {
+    this.userPreferenceService.userPreference$.subscribe(userPreference => {
       this.colorMode = userPreference.color;
       this.renderer.removeClass(document.body, 'light_mode');
       this.renderer.removeClass(document.body, 'dark_mode');

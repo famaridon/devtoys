@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class JsonService {
-
-  constructor() { }
+  constructor() {}
 
   public formatte(raw: string): string {
     return JSON.stringify(this.parse(raw), null, 2);

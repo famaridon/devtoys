@@ -6,6 +6,6 @@ const routes: Routes = [{ path: '', component: JsonFormatterComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class JsonFormatterRoutingModule { }
+export class JsonFormatterRoutingModule {}
