@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1665007325359,
+  "timestamp": 1665007568454,
   "index": "/devtoys/index.html",
   "assetGroups": [
     {
@@ -128,7 +128,7 @@
     "/devtoys/assets/icons/icon-300x300.png": "c0a308fe475f454a5f57529390c9712c4092cc7b",
     "/devtoys/assets/icons/icon-71x71.png": "2c98d712351187ded2e66216f26bc6f6ec92177a",
     "/devtoys/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/devtoys/index.html": "52ea524b9541a2f5c11fdaff53c41f2a7fd20769",
+    "/devtoys/index.html": "91f89a8bf80dfc6a6fd40a0c4bd48832597421b1",
     "/devtoys/main.d90429c2a40484f0.js": "b868f5aa45c56ef7f2b57ec79a09a7921bfe5dd3",
     "/devtoys/manifest.webmanifest": "03d2a8914d96fc04a7c20a86047486a84725932f",
     "/devtoys/polyfills.292a7d2504d2927e.js": "4cda5dc410a6ca9a50db8826d68c2574e3733aea",
