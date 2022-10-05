@@ -13,18 +13,30 @@ export class AppComponent {
   public colorMode: 'light_mode' | 'dark_mode' = 'light_mode';
 
 
-  public readonly menu: Array<MenuItem> = [
+  public readonly menu: Category[]=  [
     {
-      path: 'base64',
-      label: 'Base64'
+      label: 'Converters',
+      icon: 'glyphs',
+      menuItems: [
+        {
+          path: 'base64',
+          label: 'Base64'
+        },
+        {
+          path: 'uuid',
+          label: 'UUID'
+        },
+      ]
     },
     {
-      path: 'uuid',
-      label: 'UUID'
-    },
-    {
-      path: 'json-formatter',
-      label: 'JSON'
+      label: 'Formatters',
+      icon: 'format_indent_increase',
+      menuItems: [
+        {
+          path: 'json-formatter',
+          label: 'JSON'
+        },
+      ]
     },
   ]
 
@@ -51,6 +63,11 @@ export class AppComponent {
   }
 }
 
+interface Category {
+  label: string;
+  icon: string;
+  menuItems: MenuItem[];
+}
 interface MenuItem {
   path: string;
   label: string;

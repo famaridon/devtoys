@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { first } from 'rxjs';
 import { Base64Service } from 'src/app/core/base64.service';
 
 @Component({
@@ -6,29 +7,30 @@ import { Base64Service } from 'src/app/core/base64.service';
   templateUrl: './base64.component.html',
   styleUrls: ['./base64.component.scss']
 })
-export class Base64Component implements OnInit {
+export class Base64Component {
 
-  private _base64: string = '';
-  set base64(base64: string) {
-    this._base64 = base64;
-    this._text = this.base64Service.base64ToText(this._base64);
+  public encode: boolean = true;
+
+  private _input: string = '';
+  set input(input: string) {
+    this._input = input;
+    if(this.encode) {
+      this.base64Service.encode(this._input)
+      .pipe(first())
+      .subscribe(output => this.output = output);
+    } else {
+      this.base64Service.decode(this._input)
+      .pipe(first())
+      .subscribe(output => this.output = output);
+    }
+
   }
-  get base64(): string {
-    return this._base64;
+  get input(): string {
+    return this._input;
   }
 
-  private _text: string = '';
-  set text(text: string) {
-    this._text = text
-    this._base64 = this.base64Service.textToBase64(this._text);
-  }
-  get text(): string {
-    return this._text;
-  }
+  public output: string = '';
+
   constructor(private base64Service: Base64Service) { }
-
-  ngOnInit(): void {
-    this.text = 'Enter some text or base64.'
-  }
 
 }

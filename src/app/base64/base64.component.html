@@ -1,17 +1,30 @@
-<div class="side-by-side">
-  <mat-card class="panel">
-    <mat-card-title>Base64</mat-card-title>
-    <textarea
-      matInput
-      type="text"
-      name="base64"
-      rows="5"
-      [(ngModel)]="base64"
-    ></textarea>
-  </mat-card>
-  <div class="flex-spacer"></div>
-  <mat-card class="panel">
-    <mat-card-title>Text</mat-card-title>
-    <textarea matInput type="text" name="text" rows="5" [(ngModel)]="text"></textarea>
-  </mat-card>
+<div class="converter">
+  <h1>Base64 Text Encoder / Decoder</h1>
+<div class="configuration">
+  <h2>Configuration</h2>
+  <mat-list>
+    <mat-list-item >
+      <h3 matLine> Convertion </h3>
+      <p matLine>
+        <span>Select witch convertion mode you want to use</span>
+      </p>
+      <mat-slide-toggle [(ngModel)]="encode">{{encode ? "Encode" : "Decode"}}</mat-slide-toggle>
+    </mat-list-item>
+  </mat-list>
+</div>
+<div class="input">
+  <h2>Input</h2>
+  <textarea
+  matInput
+  type="text"
+  name="base64"
+  rows="10"
+  [(ngModel)]="input"
+  ></textarea>
+</div>
+
+<div class="output">
+<h2>Output</h2>
+<textarea matInput readonly="true" type="text" name="text" rows="10" [(ngModel)]="output"></textarea>
+</div>
 </div>

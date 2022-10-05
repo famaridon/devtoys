@@ -9,6 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { MatCardModule } from '@angular/material/card';
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatDividerModule,
   ]
 })
 export class SharedModule { }
