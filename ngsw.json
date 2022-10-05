@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1665007111293,
+  "timestamp": 1665007325359,
   "index": "/devtoys/index.html",
   "assetGroups": [
     {
@@ -71,7 +71,10 @@
         "/devtoys/assets/font/UrlEncoderDecoder.svg",
         "/devtoys/assets/font/UuidGenerator.svg",
         "/devtoys/assets/font/XMLValidator.svg",
-        "/devtoys/assets/font/XmlFormatter.svg"
+        "/devtoys/assets/font/XmlFormatter.svg",
+        "/devtoys/assets/icons/icon-150x150.png",
+        "/devtoys/assets/icons/icon-300x300.png",
+        "/devtoys/assets/icons/icon-71x71.png"
       ],
       "patterns": []
     }
@@ -121,6 +124,9 @@
     "/devtoys/assets/font/UuidGenerator.svg": "ff961a0636f0e69595f2e234c414bf63534d8ee4",
     "/devtoys/assets/font/XMLValidator.svg": "ef418b119b981513784e20a5ac24c3613e5fe2a1",
     "/devtoys/assets/font/XmlFormatter.svg": "b21b92f2acb19f8c943b296a08f3cae61f09e8aa",
+    "/devtoys/assets/icons/icon-150x150.png": "5cb894fc6d555859145184c4104f6aa223233d17",
+    "/devtoys/assets/icons/icon-300x300.png": "c0a308fe475f454a5f57529390c9712c4092cc7b",
+    "/devtoys/assets/icons/icon-71x71.png": "2c98d712351187ded2e66216f26bc6f6ec92177a",
     "/devtoys/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "/devtoys/index.html": "52ea524b9541a2f5c11fdaff53c41f2a7fd20769",
     "/devtoys/main.d90429c2a40484f0.js": "b868f5aa45c56ef7f2b57ec79a09a7921bfe5dd3",
