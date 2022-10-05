@@ -9,7 +9,7 @@
           <span>Select witch convertion mode you want to use</span>
         </p>
         <mat-slide-toggle [(ngModel)]="encode">{{
-          encode ? 'Encode' : 'Decode'
+          encode ? "Encode" : "Decode"
         }}</mat-slide-toggle>
       </mat-list-item>
     </mat-list>
@@ -21,7 +21,8 @@
       type="text"
       name="base64"
       rows="10"
-      [(ngModel)]="input"></textarea>
+      [(ngModel)]="input"
+    ></textarea>
   </div>
 
   <div class="output">
@@ -32,6 +33,7 @@
       type="text"
       name="text"
       rows="10"
-      [(ngModel)]="output"></textarea>
+      [(ngModel)]="output"
+    ></textarea>
   </div>
 </div>

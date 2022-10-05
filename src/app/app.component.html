@@ -5,7 +5,8 @@
     fixedInViewport
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false">
+    [opened]="(isHandset$ | async) === false"
+  >
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list
       ><ng-container *ngFor="let category of menu">
@@ -31,7 +32,8 @@
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
-        (click)="drawer.toggle()">
+        (click)="drawer.toggle()"
+      >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>{{ title }}</span>
@@ -40,7 +42,8 @@
         <mat-icon
           aria-hidden="false"
           aria-label="Toggle light mode"
-          [fontIcon]="colorMode"></mat-icon>
+          [fontIcon]="colorMode"
+        ></mat-icon>
       </button>
     </mat-toolbar>
     <div class="main-container">

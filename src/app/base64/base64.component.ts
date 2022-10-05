@@ -17,12 +17,12 @@ export class Base64Component {
       this.base64Service
         .encode(this._input)
         .pipe(first())
-        .subscribe(output => (this.output = output));
+        .subscribe((output) => (this.output = output));
     } else {
       this.base64Service
         .decode(this._input)
         .pipe(first())
-        .subscribe(output => (this.output = output));
+        .subscribe((output) => (this.output = output));
     }
   }
   get input(): string {

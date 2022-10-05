@@ -54,7 +54,7 @@ export class AppComponent {
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(
-      map(result => result.matches),
+      map((result) => result.matches),
       shareReplay()
     );
 
@@ -63,7 +63,7 @@ export class AppComponent {
     private renderer: Renderer2,
     private userPreferenceService: UserPreferenceService
   ) {
-    this.userPreferenceService.userPreference$.subscribe(userPreference => {
+    this.userPreferenceService.userPreference$.subscribe((userPreference) => {
       this.colorMode = userPreference.color;
       this.renderer.removeClass(document.body, 'light_mode');
       this.renderer.removeClass(document.body, 'dark_mode');

@@ -5,42 +5,23 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["tsconfig.json"],
+        "project": ["tsconfig.json", "e2e/tsconfig.json"],
         "createDefaultProgram": true
       },
       "extends": [
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended" // <--- here we inherit from the recommended setup from eslint-plugin-prettier for TS
       ],
-      "rules": {
-        "@angular-eslint/directive-selector": [
-          "error",
-          {
-            "type": "attribute",
-            "prefix": "app",
-            "style": "camelCase"
-          }
-        ],
-        "@angular-eslint/component-selector": [
-          "error",
-          {
-            "type": "element",
-            "prefix": "app",
-            "style": "kebab-case"
-          }
-        ]
-      }
+      "rules": {}
     },
     {
       "files": ["*.html"],
       "extends": [
         "plugin:@angular-eslint/template/recommended",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended" // <--- here we inherit from the recommended setup from eslint-plugin-prettier for HTML
       ],
-      "rules": {
-        "prettier/prettier": ["error", { "parser": "angular" }]
-      }
+      "rules": {}
     }
   ]
 }

@@ -16,7 +16,7 @@ export class UserPreferenceService {
       localStorage.getItem(USER_PREFERENCE_KEY)
     );
     this.userPreferenceSubject.next({ ...this.#userPreference });
-    onstorage = event => {
+    onstorage = (event) => {
       if (event.key === USER_PREFERENCE_KEY) {
         this.#userPreference = this.parseLocalStorage(event.newValue);
         this.userPreferenceSubject.next({ ...this.#userPreference });
