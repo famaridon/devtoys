@@ -2,7 +2,7 @@
 @use '@angular/material' as mat;
 @use 'sass:map';
 @import './scss/_configuration';
-@import './scss/_converters';
+@import './scss/_encoder-decoder';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -46,7 +46,7 @@ $dark-theme: mat.define-dark-theme((
 
 
 @include configuration-theme($light-theme);
-@include converters-theme($light-theme);
+@include encoder-decoder-theme($light-theme);
 
 // Apply the light theme only when the `.dark-theme` CSS class is applied
 // to an ancestor element of the components (such as `body`).
@@ -62,8 +62,18 @@ $dark-theme: mat.define-dark-theme((
  @include mat.divider-color($dark-theme);
  @include mat.list-color($dark-theme);
  @include configuration-color($dark-theme);
- @include converters-color($dark-theme);
+ @include encoder-decoder-color($dark-theme);
 }
 
 @import '~highlight.js/styles/github.css';
 
+.image-icon {
+  max-height: 24px;
+  margin-right: 8px;
+}
+
+mat-nav-list {
+  .menu-item {
+    margin-left: 25px;
+  }
+}

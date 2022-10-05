@@ -16,24 +16,33 @@ export class AppComponent {
   public readonly menu: Category[]=  [
     {
       label: 'Converters',
-      icon: 'glyphs',
+      icon: 'EncodersDecoders.svg',
       menuItems: [
         {
           path: 'base64',
+          icon: 'Base64EncoderDecoder.svg',
           label: 'Base64'
         },
+      ]
+    },
+    {
+      label: 'Generators',
+      icon: 'Generators.svg',
+      menuItems: [
         {
           path: 'uuid',
+          icon: 'UuidGenerator.svg',
           label: 'UUID'
         },
       ]
     },
     {
       label: 'Formatters',
-      icon: 'format_indent_increase',
+      icon: 'Formatters.svg',
       menuItems: [
         {
           path: 'json-formatter',
+          icon: 'JsonFormatter.svg',
           label: 'JSON'
         },
       ]
@@ -71,4 +80,5 @@ interface Category {
 interface MenuItem {
   path: string;
   label: string;
+  icon: string;
 }

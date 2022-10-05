@@ -2,9 +2,9 @@
 @use 'sass:map';
 
 
-@mixin converters-color($color) {
+@mixin encoder-decoder-color($color) {
     @debug map.get(map.get($color, 'background'), 'card');
-    .configuration {
+    .encoder-decoder {
       .mat-list-item {
         background-color: map.get(map.get($color, 'background'), 'card');
         border-color: grey;
@@ -13,8 +13,8 @@
     
   }
   
-  @mixin converters-theme($theme) {
-    .converter {
+  @mixin encoder-decoder-theme($theme) {
+    .encoder-decoder {
       .input {
         textarea {
           border-radius: 5px;

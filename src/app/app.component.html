@@ -11,9 +11,9 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <ng-container *ngFor="let category of menu">
-        <h3 matSubheader><mat-icon>{{category.icon}}</mat-icon> {{category.label}}</h3>
+        <h3 matSubheader><img class="image-icon" [src]="'assets/font/'+category.icon" /> {{category.label}}</h3>
         <mat-divider></mat-divider>
-        <a mat-list-item *ngFor="let item of category.menuItems" [routerLink]="item.path">{{
+        <a class="menu-item" mat-list-item *ngFor="let item of category.menuItems" [routerLink]="item.path"><img class="image-icon" [src]="'assets/font/'+item.icon" /> {{
           item.label
         }}</a>
       </ng-container>
