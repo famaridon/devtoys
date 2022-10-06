@@ -3,32 +3,35 @@
 
 @mixin encoder-decoder-color($color) {
   .encoder-decoder {
-    .mat-list-item {
-      background-color: map.get(map.get($color, 'background'), 'card');
-      border-color: grey;
+    .input, .output{
+      > div {
+        background-color: map.get(map.get($color, 'background'), 'card');
+        @include mat.elevation(2);
+      }
     }
   }
 }
 
 @mixin encoder-decoder-theme($theme) {
   .encoder-decoder {
-    .input {
-      textarea {
+    .input, .output{
+      > div {
         border-radius: 5px;
-        width: 100%;
+        width: calc(100% - 20px);
+        padding: 10px;
+        textarea {
+          width: 100%;
+          border-style: none;
+          outline: none;
+        }
       }
     }
-    .output {
-      textarea {
-        border-radius: 5px;
-        width: 100%;
-      }
-    }
+
   }
 
   $color: mat.get-color-config($theme);
 
   @if $color != null {
-    @include configuration-color($color);
+    @include encoder-decoder-color($color);
   }
 }

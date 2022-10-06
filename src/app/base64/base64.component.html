@@ -16,24 +16,20 @@
   </div>
   <div class="input">
     <h2>Input</h2>
-    <textarea
-      matInput
-      type="text"
-      name="base64"
-      rows="10"
-      [(ngModel)]="input"
-    ></textarea>
+    <div>
+      <textarea name="input" rows="10" [(ngModel)]="input"></textarea>
+    </div>
   </div>
 
   <div class="output">
     <h2>Output</h2>
-    <textarea
-      matInput
-      readonly="true"
-      type="text"
-      name="text"
-      rows="10"
-      [(ngModel)]="output"
-    ></textarea>
+    <div>
+      <textarea
+        readonly="true"
+        name="output"
+        rows="10"
+        [(ngModel)]="output"
+      ></textarea>
+    </div>
   </div>
 </div>
