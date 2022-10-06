@@ -1,0 +1,32 @@
+<div>
+  <h1>Lorem Ipsum</h1>
+  <app-configuration>
+    <mat-list-item>
+      <h4 matLine>Unit</h4>
+      <p matLine>
+        <span>paragraph(s), "sentence(s)", or "word(s)"</span>
+      </p>
+      <mat-form-field>
+        <mat-select [(ngModel)]="unit">
+          <mat-option [value]="'words'">Words</mat-option>
+          <mat-option [value]="'sentences'">Sentences</mat-option>
+          <mat-option [value]="'paragraphs'">Paragraphs</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <h4 matLine>Count</h4>
+      <p matLine>
+        <span>Number of "words", "sentences", or "paragraphs"</span>
+      </p>
+      <mat-form-field>
+        <input matInput type="number" [(ngModel)]="count" />
+      </mat-form-field>
+    </mat-list-item>
+  </app-configuration>
+  <h3>Generate</h3>
+  <button mat-raised-button color="primary" (click)="generate()">
+    Generate
+  </button>
+  <app-output [value]="output"></app-output>
+</div>
