@@ -5,7 +5,6 @@ import { Base64Service } from 'src/app/core/base64.service';
 @Component({
   selector: 'app-base64',
   templateUrl: './base64.component.html',
-  styleUrls: ['./base64.component.scss'],
 })
 export class Base64Component {
   public encode: boolean = true;

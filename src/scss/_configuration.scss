@@ -15,6 +15,7 @@
     .mat-list-item {
       border-radius: 5px;
       @include mat.elevation(2);
+      margin-bottom: 15px;
     }
   }
   $color: mat.get-color-config($theme);

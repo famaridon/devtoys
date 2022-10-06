@@ -4,20 +4,28 @@ import { UUIDService } from 'src/app/core/uuid.service';
 @Component({
   selector: 'app-uuid',
   templateUrl: './uuid.component.html',
-  styleUrls: ['./uuid.component.scss'],
 })
-export class UuidComponent implements OnInit {
-  public v4: string = '';
-  public v1: string = '';
+export class UuidComponent {
+  public uppercase: boolean = false;
+  public hyphens: boolean = true;
+  public version: 'v1' | 'v4' = 'v4';
+  public count: number = 10;
+
+  public output: string = '';
 
   constructor(private uuidService: UUIDService) {}
 
-  ngOnInit(): void {
-    this.generate();
-  }
-
   public generate(): void {
-    this.v4 = this.uuidService.v4();
-    this.v1 = this.uuidService.v1();
+    this.output = '';
+    this.uuidService
+      .generate({
+        uppercase: this.uppercase,
+        hyphens: this.hyphens,
+        version: this.version,
+        count: this.count,
+      })
+      .subscribe((uuid) => {
+        this.output += uuid + '\n';
+      });
   }
 }
