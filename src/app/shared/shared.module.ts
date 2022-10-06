@@ -10,12 +10,16 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { ConfigurationComponent } from './configuration/configuration.component';
+import { InputComponent } from './input/input.component';
+import { OutputComponent } from './output/output.component';
 
 @NgModule({
-  declarations: [],
-  imports: [],
+  declarations: [ConfigurationComponent, InputComponent, OutputComponent],
+  imports: [MatListModule, FormsModule],
   exports: [
     CommonModule,
+    FormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
@@ -26,8 +30,10 @@ import { MatDividerModule } from '@angular/material/divider';
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    FormsModule,
     MatDividerModule,
+    ConfigurationComponent,
+    InputComponent,
+    OutputComponent,
   ],
 })
 export class SharedModule {}

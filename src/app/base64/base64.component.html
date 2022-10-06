@@ -1,35 +1,16 @@
 <div class="encoder-decoder">
   <h1>Base64 Text Encoder / Decoder</h1>
-  <div class="configuration">
-    <h2>Configuration</h2>
-    <mat-list>
-      <mat-list-item>
-        <h3 matLine>Convertion</h3>
-        <p matLine>
-          <span>Select witch convertion mode you want to use</span>
-        </p>
-        <mat-slide-toggle [(ngModel)]="encode">{{
-          encode ? "Encode" : "Decode"
-        }}</mat-slide-toggle>
-      </mat-list-item>
-    </mat-list>
-  </div>
-  <div class="input">
-    <h2>Input</h2>
-    <div>
-      <textarea name="input" rows="10" [(ngModel)]="input"></textarea>
-    </div>
-  </div>
-
-  <div class="output">
-    <h2>Output</h2>
-    <div>
-      <textarea
-        readonly="true"
-        name="output"
-        rows="10"
-        [(ngModel)]="output"
-      ></textarea>
-    </div>
-  </div>
+  <app-configuration>
+    <mat-list-item>
+      <h3 matLine>Convertion</h3>
+      <p matLine>
+        <span>Select witch convertion mode you want to use</span>
+      </p>
+      <mat-slide-toggle [(ngModel)]="encode">{{
+        encode ? "Encode" : "Decode"
+      }}</mat-slide-toggle>
+    </mat-list-item>
+  </app-configuration>
+  <app-input [(value)]="input"></app-input>
+  <app-output [value]="output"></app-output>
 </div>
