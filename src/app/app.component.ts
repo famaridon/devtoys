@@ -36,6 +36,11 @@ export class AppComponent {
           icon: 'UuidGenerator.svg',
           label: 'UUID',
         },
+        {
+          path: 'lorem-ipsum',
+          icon: 'LoremIpsumGenerator.svg',
+          label: 'Lorem Ipsum',
+        },
       ],
     },
     {

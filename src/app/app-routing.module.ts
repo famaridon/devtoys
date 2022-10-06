@@ -18,6 +18,7 @@ const routes: Routes = [
         (m) => m.JsonFormatterModule
       ),
   },
+  { path: 'lorem-ipsum', loadChildren: () => import('./lorem-ipsum/lorem-ipsum.module').then(m => m.LoremIpsumModule) },
 ];
 
 @NgModule({
