@@ -2,7 +2,7 @@
 @use '@angular/material' as mat;
 @use 'sass:map';
 @import './scss/_configuration';
-@import './scss/_encoder-decoder';
+@import './scss/_shared';
 html,
 body {
   height: 100%;
@@ -53,7 +53,7 @@ $dark-theme: mat.define-dark-theme(
 @include mat.list-theme($light-theme);
 
 @include configuration-theme($light-theme);
-@include encoder-decoder-theme($light-theme);
+@include shared-theme($light-theme);
 
 // Apply the light theme only when the `.dark-theme` CSS class is applied
 // to an ancestor element of the components (such as `body`).
@@ -70,7 +70,7 @@ $dark-theme: mat.define-dark-theme(
   @include mat.divider-color($dark-theme);
   @include mat.list-color($dark-theme);
   @include configuration-color($dark-theme);
-  @include encoder-decoder-color($dark-theme);
+  @include shared-color($dark-theme);
 }
 
 @import '~highlight.js/styles/github.css';

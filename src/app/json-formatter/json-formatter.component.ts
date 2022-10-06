@@ -4,7 +4,6 @@ import { JsonService } from 'src/app/core/json.service';
 @Component({
   selector: 'app-json-formatter',
   templateUrl: './json-formatter.component.html',
-  styleUrls: ['./json-formatter.component.scss'],
 })
 export class JsonFormatterComponent implements OnInit {
   private _raw: string = '';
