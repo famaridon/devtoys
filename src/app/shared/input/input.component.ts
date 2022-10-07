@@ -5,11 +5,19 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './input.component.html',
 })
 export class InputComponent {
+  private _input: string = '';
+
   @Input()
-  public value: string = '';
+  public get input(): string {
+    return this._input;
+  }
+  public set input(value: string) {
+    this._input = value;
+    this.inputChange.emit(value);
+  }
 
   @Output()
-  valueChange = new EventEmitter<string>();
+  public inputChange = new EventEmitter<string>();
 
   constructor() {}
 }

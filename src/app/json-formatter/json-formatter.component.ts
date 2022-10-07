@@ -6,19 +6,24 @@ import { JsonService } from 'src/app/core/json.service';
   templateUrl: './json-formatter.component.html',
 })
 export class JsonFormatterComponent implements OnInit {
-  private _raw: string = '';
-  set raw(raw: string) {
-    this._raw = raw;
-    this.formatted = this.jsonService.formatte(raw);
+  private _input: string = '';
+  set input(input: string) {
+    console.log(input);
+    this._input = input;
+    this.jsonService.formatte(input).subscribe((output) => {
+      this.output = output;
+    });
   }
-  get raw(): string {
-    return this._raw;
+
+  get input(): string {
+    return this._input;
   }
-  public formatted: string = '';
+
+  public output: string = '';
 
   constructor(private jsonService: JsonService) {}
 
   ngOnInit(): void {
-    this.raw = '{}';
+    this.input = '{}';
   }
 }

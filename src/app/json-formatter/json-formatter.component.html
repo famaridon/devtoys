@@ -1,14 +1,13 @@
-<mat-card class="data">
-  <mat-card-title>JSON Data</mat-card-title>
-  <textarea
-    matInput
-    type="text"
-    name="base64"
-    rows="10"
-    [(ngModel)]="raw"
-  ></textarea>
-</mat-card>
-<mat-card>
-  <mat-card-title>Result</mat-card-title>
-  <pre><code [highlight]="formatted"></code></pre>
-</mat-card>
+<div>
+  <h1>JSON Formater</h1>
+  <app-configuration>
+    <mat-list-item>
+      <h4 matLine>Indentation</h4>
+      <p matLine>
+        <span>Select witch convertion mode you want to use</span>
+      </p>
+    </mat-list-item>
+  </app-configuration>
+  <app-input [(input)]="input"></app-input>
+  <pre><code [highlight]="output"></code></pre>
+</div>
