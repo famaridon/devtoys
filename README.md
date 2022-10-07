@@ -1,6 +1,6 @@
 # DevtoysWeb
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+You can use it at https://famaridon.github.io/devtoys/
 
 ## Roadmap
 
@@ -26,7 +26,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Generators
   - [ ] Hash (MD5, SHA1, SHA256, SHA512)
   - [x] UUID 1 and 4
-  - [ ] Lorem Ipsum
+  - [x] Lorem Ipsum
   - [ ] Checksum
 - Text
   - [ ] Escape / Unescape
