@@ -1,8 +1,8 @@
 {
   "name": "devtoys",
+  "id": "devtoys",
   "short_name": "devtoys",
-  "theme_color": "#62299E",
-  "background_color": "#fafafa",
+  "background_color": "#62299E",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
