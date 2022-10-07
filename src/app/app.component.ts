@@ -79,6 +79,10 @@ export class AppComponent {
   public toggleColorMode(): void {
     this.userPreferenceService.toggleColorMode();
   }
+
+  public invertColorMode(): 'light_mode' | 'dark_mode' {
+    return this.colorMode === 'light_mode' ? 'dark_mode' : 'light_mode';
+  }
 }
 
 interface Category {

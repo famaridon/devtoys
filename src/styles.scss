@@ -57,7 +57,7 @@ $dark-theme: mat.define-dark-theme(
 
 // Apply the light theme only when the `.dark-theme` CSS class is applied
 // to an ancestor element of the components (such as `body`).
-.dark-mode {
+.dark_mode {
   @include mat.core-color($dark-theme);
   @include mat.card-color($dark-theme);
   @include mat.button-color($dark-theme);
@@ -71,9 +71,11 @@ $dark-theme: mat.define-dark-theme(
   @include mat.list-color($dark-theme);
   @include configuration-color($dark-theme);
   @include shared-color($dark-theme);
+
+  @import 'highlight.js/scss/vs2015.scss';
 }
 
-@import '~highlight.js/styles/github.css';
+@import 'highlight.js/scss/googlecode.scss';
 
 .image-icon {
   max-height: 24px;

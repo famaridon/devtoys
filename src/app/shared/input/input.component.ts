@@ -5,6 +5,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './input.component.html',
 })
 export class InputComponent {
+  @Input()
+  public error: string | null = null;
+
   private _input: string = '';
 
   @Input()

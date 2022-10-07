@@ -17,7 +17,7 @@ import { OutputComponent } from './output/output.component';
 
 @NgModule({
   declarations: [ConfigurationComponent, InputComponent, OutputComponent],
-  imports: [MatListModule, FormsModule],
+  imports: [CommonModule, MatListModule, FormsModule, MatInputModule],
   exports: [
     CommonModule,
     FormsModule,

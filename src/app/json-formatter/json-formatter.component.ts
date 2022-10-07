@@ -6,13 +6,24 @@ import { JsonService } from 'src/app/core/json.service';
   templateUrl: './json-formatter.component.html',
 })
 export class JsonFormatterComponent implements OnInit {
+  public error: string | null = null;
+
   private _input: string = '';
   set input(input: string) {
-    console.log(input);
     this._input = input;
-    this.jsonService.formatte(input).subscribe((output) => {
-      this.output = output;
-    });
+    this.jsonService.formatte(input).subscribe(
+      (output) => {
+        this.error = null;
+        this.output = output;
+      },
+      (error: string | Error) => {
+        if (error instanceof Error) {
+          this.error = error.message;
+        } else {
+          this.error = error;
+        }
+      }
+    );
   }
 
   get input(): string {
@@ -24,6 +35,6 @@ export class JsonFormatterComponent implements OnInit {
   constructor(private jsonService: JsonService) {}
 
   ngOnInit(): void {
-    this.input = '{}';
+    this.input = '{\n}';
   }
 }
