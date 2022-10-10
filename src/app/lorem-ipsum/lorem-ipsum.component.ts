@@ -17,7 +17,7 @@ export class LoremIpsumComponent {
       .generate({
         units: this.unit,
         count: this.count,
-        suffix: '\n\r',
+        suffix: '\n\r\n\r',
       })
       .subscribe((output) => (this.output = output));
   }

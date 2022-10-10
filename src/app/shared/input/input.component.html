@@ -1,7 +1,9 @@
-<div class="input">
+<div class="section">
   <h3>Input</h3>
   <div>
-    <textarea name="input" rows="10" [(ngModel)]="input"></textarea>
-    <mat-error *ngIf="error">{{ error }}</mat-error>
+    <mat-form-field>
+      <textarea matInput name="input" rows="10" [(ngModel)]="input"></textarea>
+      <mat-error *ngIf="error">{{ error }}</mat-error>
+    </mat-form-field>
   </div>
 </div>
