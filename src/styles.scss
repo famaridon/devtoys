@@ -75,6 +75,10 @@ $dark-theme: mat.define-dark-theme(
   @include configuration-color($dark-theme);
   @include shared-color($dark-theme);
 
+  .image-icon { 
+    filter: invert(1);
+  }
+
   @import 'highlight.js/scss/vs2015.scss';
 }
 

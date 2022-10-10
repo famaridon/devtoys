@@ -15,7 +15,7 @@ You can use it at https://famaridon.github.io/devtoys/
 - Encoders / Decoders
   - [ ] HTML
   - [ ] URL
-  - [ ] Base64 Text
+  - [x] Base64 Text
   - [ ] Base64 Image
   - [ ] GZip
   - [ ] JWT Decoder
