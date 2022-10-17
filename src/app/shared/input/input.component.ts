@@ -8,6 +8,9 @@ export class InputComponent {
   @Input()
   public error: string | null = null;
 
+  @Input()
+  public rows: number = 10;
+
   private _input: string = '';
 
   @Input()

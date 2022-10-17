@@ -25,6 +25,10 @@ const routes: Routes = [
         (m) => m.LoremIpsumModule
       ),
   },
+  {
+    path: 'jwt',
+    loadChildren: () => import('./jwt/jwt.module').then((m) => m.JwtModule),
+  },
 ];
 
 @NgModule({

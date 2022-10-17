@@ -25,6 +25,11 @@ export class AppComponent {
           icon: 'Base64EncoderDecoder.svg',
           label: 'Base64',
         },
+        {
+          path: 'jwt',
+          icon: 'JwtDecoder.svg',
+          label: 'JwT',
+        },
       ],
     },
     {

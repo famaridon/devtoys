@@ -1,0 +1,15 @@
+<div class="encoder-decoder">
+  <h1>JwT decode</h1>
+  <app-input [(input)]="input" [rows]="3"></app-input>
+  <div class="section">
+    <h3>JWT</h3>
+    <div class="output" *ngIf="output | async as jwt">
+      <h4>Header</h4>
+      <pre><code [highlight]="stringify(jwt.header)"></code></pre>
+      <h4>Payload</h4>
+      <pre><code [highlight]="stringify(jwt.payload)"></code></pre>
+      <h4>Signature</h4>
+      <pre><code [highlight]="jwt.signature"></code></pre>
+    </div>
+  </div>
+</div>
