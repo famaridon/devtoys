@@ -94,3 +94,18 @@ mat-nav-list {
     margin-left: 25px;
   }
 }
+
+mat-toolbar {
+  a.icon {
+    display: flex;
+    flex-direction: row;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 24px;
+      width: 24px;
+    }
+  }
+}
