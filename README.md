@@ -18,7 +18,7 @@ You can use it at https://famaridon.github.io/devtoys/
   - [x] Base64 Text
   - [ ] Base64 Image
   - [ ] GZip
-  - [ ] JWT Decoder
+  - [x] JWT Decoder
 - Formatters
   - [x] JSON
   - [ ] SQL
