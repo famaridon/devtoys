@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1666015933824,
+  "timestamp": 1666017318868,
   "index": "/devtoys/index.html",
   "assetGroups": [
     {
@@ -21,11 +21,11 @@
         "/devtoys/common.deeb7ecdf50604a5.js",
         "/devtoys/favicon.ico",
         "/devtoys/index.html",
-        "/devtoys/main.0815f4e67c6f51ce.js",
+        "/devtoys/main.3d96656cf453ae42.js",
         "/devtoys/manifest.webmanifest",
         "/devtoys/polyfills.292a7d2504d2927e.js",
         "/devtoys/runtime.9b993be8d6d3e259.js",
-        "/devtoys/styles.71e38d0a74769c4c.css"
+        "/devtoys/styles.0cba489622dbee61.css"
       ],
       "patterns": []
     },
@@ -75,6 +75,12 @@
         "/devtoys/assets/font/UuidGenerator.svg",
         "/devtoys/assets/font/XMLValidator.svg",
         "/devtoys/assets/font/XmlFormatter.svg",
+        "/devtoys/assets/github/GitHub-Mark-120px-plus.png",
+        "/devtoys/assets/github/GitHub-Mark-32px-dark_mode.png",
+        "/devtoys/assets/github/GitHub-Mark-32px-light_mode.png",
+        "/devtoys/assets/github/GitHub-Mark-64px.png",
+        "/devtoys/assets/github/GitHub-Mark-Light-120px-plus.png",
+        "/devtoys/assets/github/GitHub-Mark-Light-64px.png",
         "/devtoys/assets/icons/icon-150x150.png",
         "/devtoys/assets/icons/icon-300x300.png",
         "/devtoys/assets/icons/icon-71x71.png"
@@ -129,17 +135,23 @@
     "/devtoys/assets/font/UuidGenerator.svg": "ff961a0636f0e69595f2e234c414bf63534d8ee4",
     "/devtoys/assets/font/XMLValidator.svg": "ef418b119b981513784e20a5ac24c3613e5fe2a1",
     "/devtoys/assets/font/XmlFormatter.svg": "b21b92f2acb19f8c943b296a08f3cae61f09e8aa",
+    "/devtoys/assets/github/GitHub-Mark-120px-plus.png": "8e4af8e0da1da6fb685e86c19afb5322d559a8ca",
+    "/devtoys/assets/github/GitHub-Mark-32px-dark_mode.png": "b2a79b392657b559776ce122c89e42c42970595f",
+    "/devtoys/assets/github/GitHub-Mark-32px-light_mode.png": "fabe53eb72f9b6d3d47cd95aff31ffc45c2fdbf8",
+    "/devtoys/assets/github/GitHub-Mark-64px.png": "b00f47d766170d5814e4a1270a3c534642923207",
+    "/devtoys/assets/github/GitHub-Mark-Light-120px-plus.png": "5740f0d2ea93806516b9c646e6e166aa5c0b44d9",
+    "/devtoys/assets/github/GitHub-Mark-Light-64px.png": "a897bfa37a683b8d622fdf93f5535654350d83a1",
     "/devtoys/assets/icons/icon-150x150.png": "5cb894fc6d555859145184c4104f6aa223233d17",
     "/devtoys/assets/icons/icon-300x300.png": "c0a308fe475f454a5f57529390c9712c4092cc7b",
     "/devtoys/assets/icons/icon-71x71.png": "2c98d712351187ded2e66216f26bc6f6ec92177a",
     "/devtoys/common.deeb7ecdf50604a5.js": "f43a4d70f48dbe707ced51c4d9ed12bb5f78ad84",
     "/devtoys/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/devtoys/index.html": "b34bafbce228bbf1db100279fbd65d80a24d3cd7",
-    "/devtoys/main.0815f4e67c6f51ce.js": "c8d4a09de0fa1bce172c0269b34f7c7817e81708",
+    "/devtoys/index.html": "c6788824ba4413a00784c37129ab0ecb0897f803",
+    "/devtoys/main.3d96656cf453ae42.js": "431af7101352b93276fd72fbf7f64ce6cc1a6e92",
     "/devtoys/manifest.webmanifest": "1284ac50d7af003289984a1e4b3c23260a6563bd",
     "/devtoys/polyfills.292a7d2504d2927e.js": "4cda5dc410a6ca9a50db8826d68c2574e3733aea",
     "/devtoys/runtime.9b993be8d6d3e259.js": "56ceb1e4c4fc118de5af67549f4c9662ca1c6eea",
-    "/devtoys/styles.71e38d0a74769c4c.css": "248ad4de680be9a5bc3b748538c08bd4842c27d9"
+    "/devtoys/styles.0cba489622dbee61.css": "23b619b3fa68d9d5360de04a579e315fe57198c6"
   },
   "navigationUrls": [
     {
