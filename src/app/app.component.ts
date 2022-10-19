@@ -1,10 +1,12 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, Renderer2 } from '@angular/core';
 import { map, Observable, shareReplay } from 'rxjs';
+import { NotificationService } from 'src/app/core/notification.service';
 import {
   UserPreference,
   UserPreferenceService,
 } from 'src/app/core/user-preference.service';
+import { VersionService } from 'src/app/core/version.service';
 
 @Component({
   selector: 'app-root',
@@ -71,7 +73,9 @@ export class AppComponent {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private renderer: Renderer2,
-    private userPreferenceService: UserPreferenceService
+    private userPreferenceService: UserPreferenceService,
+    private versionService: VersionService,
+    private notificationService: NotificationService // injected to load it
   ) {
     this.userPreferenceService.userPreference$.subscribe((userPreference) => {
       this.colorMode = userPreference.color;
@@ -79,6 +83,7 @@ export class AppComponent {
       this.renderer.removeClass(document.body, 'dark_mode');
       this.renderer.addClass(document.body, userPreference.color);
     });
+    this.versionService.checkForUpdate();
   }
 
   public toggleColorMode(): void {

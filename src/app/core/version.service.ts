@@ -11,7 +11,9 @@ export class VersionService {
     private _updates: SwUpdate,
     private _snackBar: MatSnackBar,
     private _notificationService: NotificationService
-  ) {
+  ) {}
+
+  public checkForUpdate(): void {
     this._updates.versionUpdates.subscribe((evt) => {
       switch (evt.type) {
         case 'VERSION_DETECTED':
@@ -29,9 +31,9 @@ export class VersionService {
           snackBarRef.onAction().subscribe(() => {
             document.location.reload();
           });
-          this._notificationService.notification(
-            'New app version ready for use'
-          );
+          this._notificationService
+            .notification('New app version ready for use')
+            .subscribe();
           break;
         case 'VERSION_INSTALLATION_FAILED':
           console.log(

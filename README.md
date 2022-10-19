@@ -1,5 +1,7 @@
 # DevtoysWeb
 
+https://devtoys.app/
+
 You can use it at https://famaridon.github.io/devtoys/
 
 ## Roadmap

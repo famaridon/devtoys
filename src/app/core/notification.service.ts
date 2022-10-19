@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { map, Observable, ReplaySubject } from 'rxjs';
+import { first, map, Observable, ReplaySubject, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -28,7 +28,9 @@ export class NotificationService {
     options?: NotificationOptions
   ): Observable<Notification | null> {
     return this._notifiable.pipe(
+      first(),
       map((notifiable) => {
+        debugger;
         if (notifiable) {
           return new Notification(title, options);
         }
