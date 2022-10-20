@@ -33,6 +33,10 @@ const routes: Routes = [
     path: 'uri',
     loadChildren: () => import('./uri/uri.module').then((m) => m.UriModule),
   },
+  {
+    path: 'html',
+    loadChildren: () => import('./html/html.module').then((m) => m.HtmlModule),
+  },
 ];
 
 @NgModule({

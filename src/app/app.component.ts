@@ -33,6 +33,11 @@ export class AppComponent {
           label: 'URL',
         },
         {
+          path: 'html',
+          icon: 'HtmlEncoderDecoder.svg',
+          label: 'HTML',
+        },
+        {
           path: 'jwt',
           icon: 'JwtDecoder.svg',
           label: 'JwT',

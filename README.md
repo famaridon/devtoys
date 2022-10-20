@@ -15,7 +15,7 @@ You can use it at https://famaridon.github.io/devtoys/
   - [ ] Number Base
   - [ ] Cron Parser
 - Encoders / Decoders
-  - [ ] HTML
+  - [x] HTML
   - [x] URL
   - [x] Base64 Text
   - [ ] Base64 Image
