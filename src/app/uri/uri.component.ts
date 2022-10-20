@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs';
-import { Base64Service } from 'src/app/core/base64.service';
+import { UriService } from 'src/app/core/uri.service';
 
 @Component({
-  selector: 'app-base64',
-  templateUrl: './base64.component.html',
+  selector: 'app-uri',
+  templateUrl: './uri.component.html',
 })
-export class Base64Component {
+export class UriComponent {
   private _encode: boolean = true;
   public get encode(): boolean {
     return this._encode;
@@ -27,16 +27,16 @@ export class Base64Component {
 
   public output: string = '';
 
-  constructor(private base64Service: Base64Service) {}
+  constructor(private uriService: UriService) {}
 
   private somethingChanged(): void {
     if (this.encode) {
-      this.base64Service
+      this.uriService
         .encode(this._input)
         .pipe(first())
         .subscribe((output) => (this.output = output));
     } else {
-      this.base64Service
+      this.uriService
         .decode(this._input)
         .pipe(first())
         .subscribe((output) => (this.output = output));

@@ -19,13 +19,18 @@ export class AppComponent {
 
   public readonly menu: Category[] = [
     {
-      label: 'Converters',
+      label: 'Encoder / Decoder',
       icon: 'EncodersDecoders.svg',
       menuItems: [
         {
           path: 'base64',
           icon: 'Base64EncoderDecoder.svg',
           label: 'Base64',
+        },
+        {
+          path: 'uri',
+          icon: 'UrlEncoderDecoder.svg',
+          label: 'URL',
         },
         {
           path: 'jwt',

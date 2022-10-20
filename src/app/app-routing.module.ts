@@ -29,6 +29,10 @@ const routes: Routes = [
     path: 'jwt',
     loadChildren: () => import('./jwt/jwt.module').then((m) => m.JwtModule),
   },
+  {
+    path: 'uri',
+    loadChildren: () => import('./uri/uri.module').then((m) => m.UriModule),
+  },
 ];
 
 @NgModule({
