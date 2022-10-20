@@ -37,6 +37,13 @@ const routes: Routes = [
     path: 'html',
     loadChildren: () => import('./html/html.module').then((m) => m.HtmlModule),
   },
+  {
+    path: 'imageBase64',
+    loadChildren: () =>
+      import('./image-base64/image-base64.module').then(
+        (m) => m.ImageBase64Module
+      ),
+  },
 ];
 
 @NgModule({

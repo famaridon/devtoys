@@ -8,11 +8,23 @@ import { from, Observable, of } from 'rxjs';
 export class Base64Service {
   constructor() {}
 
-  public encode(input: string, urlSafe?: boolean): Observable<string> {
+  public encode(input: string | File, urlSafe?: boolean): Observable<string> {
     return from(
       new Promise<string>((resovle, reject) => {
         try {
-          resovle(Base64.encode(input, urlSafe));
+          if (input instanceof File) {
+            const fileReader = new FileReader();
+            fileReader.addEventListener(
+              'load',
+              () => {
+                resovle(fileReader.result as string);
+              },
+              false
+            );
+            fileReader.readAsDataURL(input);
+          } else {
+            resovle(Base64.encode(input, urlSafe));
+          }
         } catch (e) {
           reject(e);
         }

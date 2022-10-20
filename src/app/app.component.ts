@@ -28,6 +28,11 @@ export class AppComponent {
           label: 'Base64',
         },
         {
+          path: 'imageBase64',
+          icon: 'Base64EncoderDecoder.svg',
+          label: 'Base64 Image',
+        },
+        {
           path: 'uri',
           icon: 'UrlEncoderDecoder.svg',
           label: 'URL',
