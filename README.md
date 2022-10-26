@@ -39,7 +39,7 @@ You can use it at https://famaridon.github.io/devtoys/
   - [ ] Markdown Preview
 - Graphic
   - [ ] Color Blindness Simulator
-  - [ ] Color Picker & Contrast
+  - [x] Color Picker & Contrast
   - [ ] PNG / JPEG Compressor
   - [ ] Image Converter
 
