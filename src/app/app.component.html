@@ -20,6 +20,7 @@
           mat-list-item
           *ngFor="let item of category.menuItems"
           [routerLink]="item.path"
+          [routerLinkActive]="'sidenav-item-active'"
           ><img class="image-icon" [src]="'assets/font/' + item.icon" />
           {{ item.label }}</a
         >

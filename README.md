@@ -18,7 +18,7 @@ You can use it at https://famaridon.github.io/devtoys/
   - [x] HTML
   - [x] URL
   - [x] Base64 Text
-  - [ ] Base64 Image
+  - [x] Base64 Image
   - [ ] GZip
   - [x] JWT Decoder
 - Formatters
