@@ -44,6 +44,13 @@ const routes: Routes = [
         (m) => m.ImageBase64Module
       ),
   },
+  {
+    path: 'color-picker',
+    loadChildren: () =>
+      import('./color-picker/color-picker.module').then(
+        (m) => m.ColorPickerModule
+      ),
+  },
 ];
 
 @NgModule({

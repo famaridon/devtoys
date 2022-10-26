@@ -75,14 +75,22 @@ $dark-theme: mat.define-dark-theme(
   @include configuration-color($dark-theme);
   @include shared-color($dark-theme);
 
-  .image-icon { 
-    filter: invert(1);
-  }
   mat-nav-list {
     .menu-item {
       &.sidenav-item-active.mat-list-item {
         background: mat.get-color-from-palette($dark-primary, 500);
         color: mat.get-color-from-palette($light-primary, '500-contrast');
+      }
+    }
+    .image-icon {
+      filter: invert(1);
+    }
+  }
+
+  mat-toolbar {
+    a.icon {
+      img {
+        filter: invert(0);
       }
     }
   }
@@ -127,6 +135,7 @@ mat-toolbar {
     img {
       height: 24px;
       width: 24px;
+      filter: invert(1);
     }
   }
 }

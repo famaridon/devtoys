@@ -1,0 +1,8 @@
+<div>
+  <h1>ColorPicker</h1>
+  <div #picker></div>
+  <div>HEX: <input [(ngModel)]="color.hexString" /></div>
+  <div>RGBA: {{ color.rgba | json }}</div>
+  <div>HSVA: {{ color.hsva | json }}</div>
+  <div>HSLA: {{ color.hsla | json }}</div>
+</div>

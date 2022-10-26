@@ -24,6 +24,7 @@
     "@angular/platform-browser-dynamic": "^14.2.4",
     "@angular/router": "^14.2.4",
     "@angular/service-worker": "^14.2.4",
+    "@jaames/iro": "^5.5.2",
     "js-base64": "^3.7.2",
     "lodash": "^4.17.21",
     "lorem-ipsum": "^2.0.8",
