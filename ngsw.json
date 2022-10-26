@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1666813184132,
+  "timestamp": 1666816733143,
   "index": "/devtoys/index.html",
   "assetGroups": [
     {
@@ -24,11 +24,11 @@
         "/devtoys/common.27d8bf23f2f6a5ef.js",
         "/devtoys/favicon.ico",
         "/devtoys/index.html",
-        "/devtoys/main.b89e76c0bc21e162.js",
+        "/devtoys/main.7ac3f2ac006f6b12.js",
         "/devtoys/manifest.webmanifest",
         "/devtoys/polyfills.292a7d2504d2927e.js",
-        "/devtoys/runtime.15fac321cdf95bf1.js",
-        "/devtoys/styles.2fbd59ff6816a579.css"
+        "/devtoys/runtime.42b48f0be8b76e98.js",
+        "/devtoys/styles.30c8561a18af7762.css"
       ],
       "patterns": []
     },
@@ -152,12 +152,12 @@
     "/devtoys/assets/icons/icon-71x71.png": "2c98d712351187ded2e66216f26bc6f6ec92177a",
     "/devtoys/common.27d8bf23f2f6a5ef.js": "fff428ee8b9b925e2be987cc8a18bc65ec192f4d",
     "/devtoys/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/devtoys/index.html": "4984c6aab81cf8017533b911fa9bad728f7b040f",
-    "/devtoys/main.b89e76c0bc21e162.js": "703e46e2ef5d13d671a986fc73bff5395783cf89",
+    "/devtoys/index.html": "5f5d5eebbdc269cb1b6378bddc1a6d52b5fbe6e1",
+    "/devtoys/main.7ac3f2ac006f6b12.js": "7bc3be92e4cc642313c8803829227a04afd02809",
     "/devtoys/manifest.webmanifest": "1284ac50d7af003289984a1e4b3c23260a6563bd",
     "/devtoys/polyfills.292a7d2504d2927e.js": "4cda5dc410a6ca9a50db8826d68c2574e3733aea",
-    "/devtoys/runtime.15fac321cdf95bf1.js": "eff0416152b73f132ec63dc68d3ab794af55eb98",
-    "/devtoys/styles.2fbd59ff6816a579.css": "a2350bd1b7bd0ddf56e0ad7d1e7037f60d12a945"
+    "/devtoys/runtime.42b48f0be8b76e98.js": "ace1230f48cce7906315d0bf37fb5563d6a16fef",
+    "/devtoys/styles.30c8561a18af7762.css": "72430e3676aaffd79bcc512b87ce27bae3bc7aa4"
   },
   "navigationUrls": [
     {
