@@ -1,5 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Renderer2, ViewChild } from '@angular/core';
 import { MatDrawer, MatSidenav } from '@angular/material/sidenav';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, map, Observable, shareReplay } from 'rxjs';
@@ -15,7 +15,7 @@ import { VersionService } from 'src/app/core/version.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   public title = 'devtoys';
   public colorMode: 'light_mode' | 'dark_mode' = 'light_mode';
   @ViewChild('drawer')
@@ -111,10 +111,18 @@ export class AppComponent {
         map((e) => e as NavigationEnd)
       )
       .subscribe((e) => {
+        localStorage.setItem('lastVisitedUrl', e.url);
         if (this.drawer?.mode == 'over' && this.drawer.opened) {
           this.drawer.close();
         }
       });
+  }
+
+  ngAfterViewInit(): void {
+    const lastVisitedUrl = localStorage.getItem('lastVisitedUrl');
+    if (lastVisitedUrl) {
+      this.router.navigateByUrl(lastVisitedUrl);
+    }
   }
 
   public toggleColorMode(): void {
