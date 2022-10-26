@@ -32,7 +32,10 @@
   <ng-template #decode>
     <div class="section">
       <app-input [(input)]="base64"></app-input>
-      <img [src]="base64" />
+      <div *ngIf="base64.length < 35 * 1024; else imageTooBig">
+        <img [src]="base64" />
+      </div>
+      <ng-template #imageTooBig>Image is too big</ng-template>
     </div>
   </ng-template>
 </div>

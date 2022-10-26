@@ -1,6 +1,8 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, Renderer2 } from '@angular/core';
-import { map, Observable, shareReplay } from 'rxjs';
+import { Component, Renderer2, ViewChild } from '@angular/core';
+import { MatDrawer, MatSidenav } from '@angular/material/sidenav';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter, map, Observable, shareReplay } from 'rxjs';
 import { NotificationService } from 'src/app/core/notification.service';
 import {
   UserPreference,
@@ -16,6 +18,8 @@ import { VersionService } from 'src/app/core/version.service';
 export class AppComponent {
   public title = 'devtoys';
   public colorMode: 'light_mode' | 'dark_mode' = 'light_mode';
+  @ViewChild('drawer')
+  public drawer: MatDrawer | null = null;
 
   public readonly menu: Category[] = [
     {
@@ -90,7 +94,8 @@ export class AppComponent {
     private renderer: Renderer2,
     private userPreferenceService: UserPreferenceService,
     private versionService: VersionService,
-    private notificationService: NotificationService // injected to load it
+    private notificationService: NotificationService, // injected to load it
+    private router: Router
   ) {
     this.userPreferenceService.userPreference$.subscribe((userPreference) => {
       this.colorMode = userPreference.color;
@@ -99,6 +104,17 @@ export class AppComponent {
       this.renderer.addClass(document.body, userPreference.color);
     });
     this.versionService.checkForUpdate();
+
+    router.events
+      .pipe(
+        filter((e) => e instanceof NavigationEnd),
+        map((e) => e as NavigationEnd)
+      )
+      .subscribe((e) => {
+        if (this.drawer?.mode == 'over' && this.drawer.opened) {
+          this.drawer.close();
+        }
+      });
   }
 
   public toggleColorMode(): void {
