@@ -3,53 +3,26 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'base64',
+    path: 'generators',
     loadChildren: () =>
-      import('./base64/base64.module').then((m) => m.Base64Module),
+      import('./generators/generators.module').then((m) => m.GeneratorsModule),
   },
   {
-    path: 'uuid',
-    loadChildren: () => import('./uuid/uuid.module').then((m) => m.UuidModule),
-  },
-  {
-    path: 'json-formatter',
+    path: 'encoders-decoders',
     loadChildren: () =>
-      import('./json-formatter/json-formatter.module').then(
-        (m) => m.JsonFormatterModule
+      import('./encoders-decoders/encoders-decoders.module').then(
+        (m) => m.EncodersDecodersModule
       ),
   },
   {
-    path: 'lorem-ipsum',
+    path: 'formatters',
     loadChildren: () =>
-      import('./lorem-ipsum/lorem-ipsum.module').then(
-        (m) => m.LoremIpsumModule
-      ),
+      import('./formatters/formatters.module').then((m) => m.FormattersModule),
   },
   {
-    path: 'jwt',
-    loadChildren: () => import('./jwt/jwt.module').then((m) => m.JwtModule),
-  },
-  {
-    path: 'uri',
-    loadChildren: () => import('./uri/uri.module').then((m) => m.UriModule),
-  },
-  {
-    path: 'html',
-    loadChildren: () => import('./html/html.module').then((m) => m.HtmlModule),
-  },
-  {
-    path: 'imageBase64',
+    path: 'graphic',
     loadChildren: () =>
-      import('./image-base64/image-base64.module').then(
-        (m) => m.ImageBase64Module
-      ),
-  },
-  {
-    path: 'color-picker',
-    loadChildren: () =>
-      import('./color-picker/color-picker.module').then(
-        (m) => m.ColorPickerModule
-      ),
+      import('./graphic/graphic.module').then((m) => m.GraphicModule),
   },
 ];
 

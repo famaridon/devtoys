@@ -10,27 +10,27 @@ export class MenuService {
       icon: 'EncodersDecoders.svg',
       menuItems: [
         {
-          path: 'base64',
+          path: 'encoders-decoders/base64',
           icon: 'Base64EncoderDecoder.svg',
           label: 'Base64',
         },
         {
-          path: 'imageBase64',
+          path: 'encoders-decoders/image-base64',
           icon: 'Base64EncoderDecoder.svg',
           label: 'Base64 Image',
         },
         {
-          path: 'uri',
+          path: 'encoders-decoders/uri',
           icon: 'UrlEncoderDecoder.svg',
           label: 'URL',
         },
         {
-          path: 'html',
+          path: 'encoders-decoders/html',
           icon: 'HtmlEncoderDecoder.svg',
           label: 'HTML',
         },
         {
-          path: 'jwt',
+          path: 'encoders-decoders/jwt',
           icon: 'JwtDecoder.svg',
           label: 'JwT',
         },
@@ -41,12 +41,12 @@ export class MenuService {
       icon: 'Generators.svg',
       menuItems: [
         {
-          path: 'uuid',
+          path: 'generators/uuid',
           icon: 'UuidGenerator.svg',
           label: 'UUID',
         },
         {
-          path: 'lorem-ipsum',
+          path: 'generators/lorem-ipsum',
           icon: 'LoremIpsumGenerator.svg',
           label: 'Lorem Ipsum',
         },
@@ -57,7 +57,7 @@ export class MenuService {
       icon: 'Formatters.svg',
       menuItems: [
         {
-          path: 'json-formatter',
+          path: 'formatters/json',
           icon: 'JsonFormatter.svg',
           label: 'JSON',
         },
@@ -68,7 +68,7 @@ export class MenuService {
       icon: 'Graphic.svg',
       menuItems: [
         {
-          path: 'color-picker',
+          path: 'graphic/color-picker',
           icon: 'ColorPicker.svg',
           label: 'Color Picker',
         },
