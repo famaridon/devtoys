@@ -3,6 +3,7 @@
   "id": "devtoys",
   "short_name": "devtoys",
   "background_color": "#62299E",
+  "theme-color": "#62299E",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
