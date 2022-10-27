@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { escape, unescape } from 'lodash';
+import { escape, unescape } from 'html-escaper';
 import { from, Observable } from 'rxjs';
 
 @Injectable()
