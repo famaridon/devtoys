@@ -37,9 +37,9 @@ import { MatButtonModule } from '@angular/material/button';
     {
       provide: HIGHLIGHT_OPTIONS,
       useValue: {
-        coreLibraryLoader: () => import('highlight.js/lib/core'),
+        coreLibraryLoader: (): Promise<any> => import('highlight.js/lib/core'),
         languages: {
-          json: () => import('highlight.js/lib/languages/json'),
+          json: (): Promise<any> => import('highlight.js/lib/languages/json'),
         },
       },
     },

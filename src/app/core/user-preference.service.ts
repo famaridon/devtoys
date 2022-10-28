@@ -11,12 +11,12 @@ export class UserPreferenceService {
   #userPreference: UserPreference;
   public userPreference$ = this.userPreferenceSubject.asObservable();
 
-  constructor() {
+  public constructor() {
     this.#userPreference = this.parseLocalStorage(
       localStorage.getItem(USER_PREFERENCE_KEY)
     );
     this.userPreferenceSubject.next({ ...this.#userPreference });
-    onstorage = (event) => {
+    onstorage = (event): void => {
       if (event.key === USER_PREFERENCE_KEY) {
         this.#userPreference = this.parseLocalStorage(event.newValue);
         this.userPreferenceSubject.next({ ...this.#userPreference });
@@ -47,7 +47,7 @@ export class UserPreferenceService {
     });
   }
 
-  private save(userPreference: UserPreference) {
+  private save(userPreference: UserPreference): void {
     this.#userPreference = { ...userPreference };
     this.userPreferenceSubject.next({ ...this.#userPreference });
     localStorage.setItem(

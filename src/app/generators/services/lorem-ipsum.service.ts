@@ -5,7 +5,7 @@ import { GeneratorsModule } from 'src/app/generators/generators.module';
 
 @Injectable()
 export class LoremIpsumService {
-  constructor() {}
+  public constructor() {}
 
   public generate(
     loremIpsumOptions: Partial<ILoremIpsumParams>

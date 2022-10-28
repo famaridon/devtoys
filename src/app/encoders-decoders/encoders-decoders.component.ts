@@ -5,5 +5,5 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './encoders-decoders.component.html',
 })
 export class EncodersDecodersComponent {
-  constructor() {}
+  public constructor() {}
 }

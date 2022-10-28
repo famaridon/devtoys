@@ -4,7 +4,7 @@ import { from, Observable } from 'rxjs';
 
 @Injectable()
 export class HtmlService {
-  constructor() {}
+  public constructor() {}
 
   public encode(input: string): Observable<string> {
     return from(

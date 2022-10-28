@@ -22,7 +22,7 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('drawer')
   public drawer: MatDrawer | null = null;
 
-  isHandset$: Observable<boolean> = this.breakpointObserver
+  public isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(
       map((result) => result.matches),
@@ -31,7 +31,7 @@ export class AppComponent implements AfterViewInit {
 
   public readonly menu: Category[];
 
-  constructor(
+  public constructor(
     private breakpointObserver: BreakpointObserver,
     private renderer: Renderer2,
     private userPreferenceService: UserPreferenceService,
@@ -62,7 +62,7 @@ export class AppComponent implements AfterViewInit {
       });
   }
 
-  ngAfterViewInit(): void {
+  public ngAfterViewInit(): void {
     const lastVisitedUrl = localStorage.getItem('lastVisitedUrl');
     if (lastVisitedUrl) {
       this.router.navigateByUrl(lastVisitedUrl);

@@ -10,7 +10,7 @@ export class LoremIpsumComponent {
   public output: string = '';
   public unit: LoremUnit = 'paragraphs';
   public count: number = 1;
-  constructor(private loremIpsumService: LoremIpsumService) {}
+  public constructor(private loremIpsumService: LoremIpsumService) {}
 
   public generate(): void {
     this.loremIpsumService

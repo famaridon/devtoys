@@ -25,5 +25,5 @@ export class InputComponent {
   @Output()
   public inputChange = new EventEmitter<string>();
 
-  constructor() {}
+  public constructor() {}
 }

@@ -14,5 +14,5 @@ import { ColorPickerControl } from '@iplab/ngx-color-picker';
 export class ColorPickerComponent {
   public sketchControl = new ColorPickerControl().setValueFrom('#A6771C');
 
-  constructor() {}
+  public constructor() {}
 }

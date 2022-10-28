@@ -18,7 +18,7 @@ export class ImageBase64Component {
 
   public encode: boolean = true;
   public base64: string = '';
-  constructor(private base64Service: Base64Service) {}
+  public constructor(private base64Service: Base64Service) {}
 
   public openFileChooser(): void {
     (this.fileChooser?.nativeElement as HTMLInputElement).click();

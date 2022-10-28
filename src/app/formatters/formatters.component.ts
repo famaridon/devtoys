@@ -5,5 +5,5 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './formatters.component.html',
 })
 export class FormattersComponent {
-  constructor() {}
+  public constructor() {}
 }

@@ -11,5 +11,5 @@ export class OutputComponent {
   @Input()
   public rows: number = 10;
 
-  constructor() {}
+  public constructor() {}
 }

@@ -5,5 +5,5 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './configuration.component.html',
 })
 export class ConfigurationComponent {
-  constructor() {}
+  public constructor() {}
 }

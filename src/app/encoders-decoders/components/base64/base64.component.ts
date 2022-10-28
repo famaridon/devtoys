@@ -17,17 +17,17 @@ export class Base64Component {
   }
 
   private _input: string = '';
-  set input(input: string) {
+  public set input(input: string) {
     this._input = input;
     this.somethingChanged();
   }
-  get input(): string {
+  public get input(): string {
     return this._input;
   }
 
   public output: string = '';
 
-  constructor(private base64Service: Base64Service) {}
+  public constructor(private base64Service: Base64Service) {}
 
   private somethingChanged(): void {
     if (this.encode) {

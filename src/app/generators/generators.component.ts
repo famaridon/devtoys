@@ -5,5 +5,5 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './generators.component.html',
 })
 export class GeneratorsComponent {
-  constructor() {}
+  public constructor() {}
 }

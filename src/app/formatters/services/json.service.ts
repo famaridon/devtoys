@@ -4,7 +4,7 @@ import { FormattersModule } from 'src/app/formatters/formatters.module';
 
 @Injectable()
 export class JsonService {
-  constructor() {}
+  public constructor() {}
 
   public formatte(raw: string): Observable<string> {
     return from(this.f(raw));

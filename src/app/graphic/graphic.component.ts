@@ -5,5 +5,5 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './graphic.component.html',
 })
 export class GraphicComponent {
-  constructor() {}
+  public constructor() {}
 }

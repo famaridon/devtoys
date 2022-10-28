@@ -3,7 +3,7 @@ import { from, Observable } from 'rxjs';
 
 @Injectable()
 export class UriService {
-  constructor() {}
+  public constructor() {}
 
   public encode(input: string): Observable<string> {
     return from(

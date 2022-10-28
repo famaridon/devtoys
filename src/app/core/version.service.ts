@@ -7,7 +7,7 @@ import { NotificationService } from 'src/app/core/notification.service';
   providedIn: 'root',
 })
 export class VersionService {
-  constructor(
+  public constructor(
     private _updates: SwUpdate,
     private _snackBar: MatSnackBar,
     private _notificationService: NotificationService

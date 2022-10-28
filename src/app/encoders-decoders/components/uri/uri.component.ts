@@ -17,17 +17,17 @@ export class UriComponent {
   }
 
   private _input: string = '';
-  set input(input: string) {
+  public set input(input: string) {
     this._input = input;
     this.somethingChanged();
   }
-  get input(): string {
+  public get input(): string {
     return this._input;
   }
 
   public output: string = '';
 
-  constructor(private uriService: UriService) {}
+  public constructor(private uriService: UriService) {}
 
   private somethingChanged(): void {
     if (this.encode) {

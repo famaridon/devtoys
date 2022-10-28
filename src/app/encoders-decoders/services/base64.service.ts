@@ -4,7 +4,7 @@ import { from, Observable, of } from 'rxjs';
 
 @Injectable()
 export class Base64Service {
-  constructor() {}
+  public constructor() {}
 
   public encode(input: string | File, urlSafe?: boolean): Observable<string> {
     return from(

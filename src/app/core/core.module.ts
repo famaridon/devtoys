@@ -7,7 +7,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   imports: [CommonModule, MatSnackBarModule],
 })
 export class CoreModule {
-  constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+  public constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
     if (parentModule) {
       throw new Error(
         `CoreModule has already been loaded. Import Core modules in the AppModule only.`

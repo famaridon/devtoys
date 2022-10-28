@@ -4,7 +4,7 @@ import { Base64Service } from 'src/app/encoders-decoders/services/base64.service
 
 @Injectable()
 export class JwtService {
-  constructor(private base64Service: Base64Service) {}
+  public constructor(private base64Service: Base64Service) {}
 
   public formatte(token: string): Observable<Token> {
     const splited = token.split('.');

@@ -9,7 +9,7 @@ export class JsonFormatterComponent implements OnInit {
   public error: string | null = null;
 
   private _input: string = '';
-  set input(input: string) {
+  public set input(input: string) {
     this._input = input;
     this.jsonService.formatte(input).subscribe(
       (output) => {
@@ -26,15 +26,15 @@ export class JsonFormatterComponent implements OnInit {
     );
   }
 
-  get input(): string {
+  public get input(): string {
     return this._input;
   }
 
   public output: string = '';
 
-  constructor(private jsonService: JsonService) {}
+  public constructor(private jsonService: JsonService) {}
 
-  ngOnInit(): void {
+  public gOnInit(): void {
     this.input = '{\n}';
   }
 }

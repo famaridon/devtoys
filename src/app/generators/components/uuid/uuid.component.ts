@@ -13,7 +13,7 @@ export class UuidComponent {
 
   public output: string = '';
 
-  constructor(private uuidService: UUIDService) {}
+  public constructor(private uuidService: UUIDService) {}
 
   public generate(): void {
     this.output = '';

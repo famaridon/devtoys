@@ -7,7 +7,10 @@ import { filter } from 'rxjs';
   providedIn: 'root',
 })
 export class PromptUpdateService {
-  constructor(private swUpdate: SwUpdate, private _snackBar: MatSnackBar) {
+  public constructor(
+    private swUpdate: SwUpdate,
+    private _snackBar: MatSnackBar
+  ) {
     swUpdate.versionUpdates
       .pipe(
         filter((evt): evt is VersionReadyEvent => evt.type === 'VERSION_READY')

@@ -24,7 +24,7 @@ export class JwtComponent {
 
   public output: Observable<Token>;
 
-  constructor(private jwtService: JwtService) {
+  public constructor(private jwtService: JwtService) {
     this._input = SAMPLE_JWT;
     this.output = this.onInputChange(this._input);
   }
@@ -33,7 +33,7 @@ export class JwtComponent {
     return this.jwtService.formatte(token);
   }
 
-  public stringify(value: object) {
+  public stringify(value: object): string {
     return JSON.stringify(value, null, 4);
   }
 }

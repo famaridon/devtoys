@@ -76,7 +76,7 @@ export class MenuService {
     },
   ];
 
-  constructor() {}
+  public constructor() {}
 }
 
 export interface Category {

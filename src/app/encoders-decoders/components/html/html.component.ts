@@ -17,17 +17,17 @@ export class HtmlComponent {
   }
 
   private _input: string = '';
-  set input(input: string) {
+  public set input(input: string) {
     this._input = input;
     this.somethingChanged();
   }
-  get input(): string {
+  public get input(): string {
     return this._input;
   }
 
   public output: string = '';
 
-  constructor(private htmlService: HtmlService) {}
+  public constructor(private htmlService: HtmlService) {}
 
   private somethingChanged(): void {
     if (this.encode) {

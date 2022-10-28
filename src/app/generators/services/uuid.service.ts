@@ -5,7 +5,7 @@ import { v1 as uuidv1, v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class UUIDService {
-  constructor() {}
+  public constructor() {}
 
   public generate(options: GenerationOptions): Observable<string> {
     return range(1, options.count).pipe(

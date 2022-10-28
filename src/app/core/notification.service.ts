@@ -7,7 +7,7 @@ import { first, map, Observable, ReplaySubject, tap } from 'rxjs';
 export class NotificationService {
   private _notifiable: ReplaySubject<boolean> = new ReplaySubject(1);
 
-  constructor() {
+  public constructor() {
     if (!('Notification' in window)) {
       this._notifiable.next(false);
     } else if (Notification.permission === 'granted') {
