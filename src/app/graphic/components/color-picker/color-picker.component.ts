@@ -5,30 +5,14 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import iro from '@jaames/iro';
-import { IroColorPicker } from '@jaames/iro/dist/ColorPicker';
+import { ColorPickerControl } from '@iplab/ngx-color-picker';
 
 @Component({
   selector: 'app-color-picker',
   templateUrl: './color-picker.component.html',
 })
-export class ColorPickerComponent implements AfterViewInit {
-  @ViewChild('picker')
-  public pickerElementRef: ElementRef | null = null;
-  public picker: IroColorPicker | null = null;
-  public color: iro.Color;
+export class ColorPickerComponent {
+  public sketchControl = new ColorPickerControl().setValueFrom('#A6771C');
 
-  constructor() {
-    this.color = new iro.Color('#ff0000');
-  }
-
-  ngAfterViewInit(): void {
-    if (this.pickerElementRef == null) {
-      return;
-    }
-    this.picker = iro.ColorPicker(this.pickerElementRef.nativeElement, {
-      color: this.color,
-    });
-    this.picker.on('color:change', (color: iro.Color) => (this.color = color));
-  }
+  constructor() {}
 }

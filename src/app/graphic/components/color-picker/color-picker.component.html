@@ -1,8 +1,30 @@
 <div>
   <h1>ColorPicker</h1>
-  <div #picker></div>
-  <div>HEX: <input [(ngModel)]="color.hexString" /></div>
-  <div>RGBA: {{ color.rgba | json }}</div>
-  <div>HSVA: {{ color.hsva | json }}</div>
-  <div>HSLA: {{ color.hsla | json }}</div>
+  <sketch-picker [control]="sketchControl"></sketch-picker>
+  <mat-list role="list">
+    <mat-list-item role="listitem">
+      <h3 matLine>hex</h3>
+      <span matLine>{{ sketchControl.value.toHexString() }}</span>
+      <span matLine>{{ sketchControl.value.toHexString(true) }}</span>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <h3 matLine>rgb</h3>
+      <span matLine>{{ sketchControl.value.toRgbString() }}</span>
+      <span matLine>{{ sketchControl.value.toRgbaString() }}</span>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <h3 matLine>hsl</h3>
+      <span matLine>{{ sketchControl.value.toHslString() }}</span>
+      <span matLine>{{ sketchControl.value.toHslaString() }}</span>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <h3 matLine>hsv</h3>
+      <span matLine>{{ sketchControl.value.toHsvString() }}</span>
+      <span matLine>{{ sketchControl.value.toHsvaString() }}</span>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <h3 matLine>cmyk</h3>
+      <span matLine>{{ sketchControl.value.toCmykString() }}</span>
+    </mat-list-item>
+  </mat-list>
 </div>

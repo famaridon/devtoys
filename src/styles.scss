@@ -52,6 +52,7 @@ $dark-theme: mat.define-dark-theme(
 @include mat.divider-theme($light-theme);
 @include mat.list-theme($light-theme);
 @include mat.snack-bar-theme($light-theme);
+@include mat.tabs-color($light-theme);
 
 @include configuration-theme($light-theme);
 @include shared-theme($light-theme);
@@ -71,6 +72,7 @@ $dark-theme: mat.define-dark-theme(
   @include mat.divider-color($dark-theme);
   @include mat.list-color($dark-theme);
   @include mat.snack-bar-color($dark-theme);
+  @include mat.tabs-color($dark-theme);
 
   @include configuration-color($dark-theme);
   @include shared-color($dark-theme);
