@@ -34,7 +34,7 @@ export class JsonFormatterComponent implements OnInit {
 
   public constructor(private jsonService: JsonService) {}
 
-  public gOnInit(): void {
+  public ngOnInit(): void {
     this.input = '{\n}';
   }
 }
