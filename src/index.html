@@ -19,6 +19,21 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XWY0DV8DZC"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      /** Disable automatic page view hit to fix duplicate page view count  **/
+      gtag("config", "G-XWY0DV8DZC", { send_page_view: false });
+    </script>
   </head>
   <body class="mat-typography">
     <app-root></app-root>

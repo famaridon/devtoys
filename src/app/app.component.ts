@@ -3,6 +3,7 @@ import { AfterViewInit, Component, Renderer2, ViewChild } from '@angular/core';
 import { MatDrawer, MatSidenav } from '@angular/material/sidenav';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, map, Observable, shareReplay } from 'rxjs';
+import { GoogleAnalyticsService } from 'src/app/core/google-analytics.service';
 import { Category, MenuService } from 'src/app/core/menu.service';
 import { NotificationService } from 'src/app/core/notification.service';
 import {
@@ -37,6 +38,7 @@ export class AppComponent implements AfterViewInit {
     private userPreferenceService: UserPreferenceService,
     private versionService: VersionService,
     private notificationService: NotificationService, // injected to load it
+    private googleAnalyticsService: GoogleAnalyticsService, // injected to load it
     private router: Router,
     private menuService: MenuService
   ) {
