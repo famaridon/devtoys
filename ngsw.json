@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1667223196525,
+  "timestamp": 1667587273851,
   "index": "/devtoys/index.html",
   "assetGroups": [
     {
@@ -21,7 +21,7 @@
         "/devtoys/common.fb3c88feb6d8bdd4.js",
         "/devtoys/favicon.ico",
         "/devtoys/index.html",
-        "/devtoys/main.76ab725453527102.js",
+        "/devtoys/main.9d186c70066ce9bf.js",
         "/devtoys/manifest.webmanifest",
         "/devtoys/polyfills.292a7d2504d2927e.js",
         "/devtoys/runtime.1e4313f2d3c0370e.js",
@@ -146,8 +146,8 @@
     "/devtoys/assets/icons/icon-71x71.png": "2c98d712351187ded2e66216f26bc6f6ec92177a",
     "/devtoys/common.fb3c88feb6d8bdd4.js": "0269f128209c1da17f2c8f2d908b3dd87240cf69",
     "/devtoys/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/devtoys/index.html": "618525ff439f28d5a799a0ef67e5dde4ebed6d88",
-    "/devtoys/main.76ab725453527102.js": "b38e9a978b8559f64039d17583bb83d7ecd8a2bd",
+    "/devtoys/index.html": "b3ac550e5d9bcacee4265aa51e645f72492d5755",
+    "/devtoys/main.9d186c70066ce9bf.js": "9b6e4de5cc740e173eac9f9cb7508015e125b89f",
     "/devtoys/manifest.webmanifest": "7446583e37ba92555f926b86200f36aa714e91e4",
     "/devtoys/polyfills.292a7d2504d2927e.js": "4cda5dc410a6ca9a50db8826d68c2574e3733aea",
     "/devtoys/runtime.1e4313f2d3c0370e.js": "4df555e733c8bb092bb74efd2667c09f31ef8979",
