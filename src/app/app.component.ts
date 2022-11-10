@@ -1,16 +1,15 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AfterViewInit, Component, Renderer2, ViewChild } from '@angular/core';
-import { MatDrawer, MatSidenav } from '@angular/material/sidenav';
+import { MatDrawer } from '@angular/material/sidenav';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, map, Observable, shareReplay } from 'rxjs';
 import { GoogleAnalyticsService } from 'src/app/core/google-analytics.service';
+import { LocalStorageService } from 'src/app/core/local-storage.service';
 import { Category, MenuService } from 'src/app/core/menu.service';
 import { NotificationService } from 'src/app/core/notification.service';
-import {
-  UserPreference,
-  UserPreferenceService,
-} from 'src/app/core/user-preference.service';
 import { VersionService } from 'src/app/core/version.service';
+
+const DEFAULT_THEME_PREFERENCE: ThemePreference = { color: 'light_mode' };
 
 @Component({
   selector: 'app-root',
@@ -35,7 +34,7 @@ export class AppComponent implements AfterViewInit {
   public constructor(
     private breakpointObserver: BreakpointObserver,
     private renderer: Renderer2,
-    private userPreferenceService: UserPreferenceService,
+    private localStorageService: LocalStorageService,
     private versionService: VersionService,
     private notificationService: NotificationService, // injected to load it
     private googleAnalyticsService: GoogleAnalyticsService, // injected to load it
@@ -43,12 +42,14 @@ export class AppComponent implements AfterViewInit {
     private menuService: MenuService
   ) {
     this.menu = this.menuService.menu;
-    this.userPreferenceService.userPreference$.subscribe((userPreference) => {
-      this.colorMode = userPreference.color;
-      this.renderer.removeClass(document.body, 'light_mode');
-      this.renderer.removeClass(document.body, 'dark_mode');
-      this.renderer.addClass(document.body, userPreference.color);
-    });
+    this.localStorageService
+      .getItem<ThemePreference>('theme', DEFAULT_THEME_PREFERENCE)
+      .subscribe((themePreference) => {
+        this.colorMode = themePreference.color;
+        this.renderer.removeClass(document.body, 'light_mode');
+        this.renderer.removeClass(document.body, 'dark_mode');
+        this.renderer.addClass(document.body, themePreference.color);
+      });
     this.versionService.checkForUpdate();
 
     router.events
@@ -72,10 +73,22 @@ export class AppComponent implements AfterViewInit {
   }
 
   public toggleColorMode(): void {
-    this.userPreferenceService.toggleColorMode();
+    let newColor: 'dark_mode' | 'light_mode';
+    if (this.colorMode === 'light_mode') {
+      newColor = 'dark_mode';
+    } else {
+      newColor = 'light_mode';
+    }
+    this.localStorageService.setItem<ThemePreference>('theme', {
+      color: newColor,
+    });
   }
 
   public invertColorMode(): 'light_mode' | 'dark_mode' {
     return this.colorMode === 'light_mode' ? 'dark_mode' : 'light_mode';
   }
 }
+
+type ThemePreference = {
+  color: 'dark_mode' | 'light_mode';
+};
