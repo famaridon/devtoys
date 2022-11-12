@@ -3,6 +3,13 @@ import { first } from 'rxjs';
 import { LocalStorageService } from 'src/app/core/local-storage.service';
 import { Base64Service } from 'src/app/encoders-decoders/services/base64.service';
 
+type Base64Preference = {
+  encode: boolean;
+  input: string;
+};
+
+const BASE64_PREFERENCE_KEY = 'base64';
+
 const DEFAULT_BASE64_PREFERENCE: Base64Preference = {
   encode: true,
   input: '',
@@ -38,7 +45,10 @@ export class Base64Component {
     private localStorageService: LocalStorageService
   ) {
     this.localStorageService
-      .getItem<Base64Preference>('base64', DEFAULT_BASE64_PREFERENCE)
+      .getItem<Base64Preference>(
+        BASE64_PREFERENCE_KEY,
+        DEFAULT_BASE64_PREFERENCE
+      )
       .subscribe((pref) => {
         this._encode = pref.encode;
         this._input = pref.input;
@@ -46,7 +56,7 @@ export class Base64Component {
   }
 
   private somethingChanged(): void {
-    this.localStorageService.setItem<Base64Preference>('base64', {
+    this.localStorageService.setItem<Base64Preference>(BASE64_PREFERENCE_KEY, {
       encode: this._encode,
       input: this._input,
     });
@@ -63,8 +73,3 @@ export class Base64Component {
     }
   }
 }
-
-type Base64Preference = {
-  encode: boolean;
-  input: string;
-};
