@@ -11,19 +11,19 @@ export class JsonFormatterComponent implements OnInit {
   private _input: string = '';
   public set input(input: string) {
     this._input = input;
-    this.jsonService.formatte(input).subscribe(
-      (output) => {
+    this.jsonService.formatte(input).subscribe({
+      next: (output) => {
         this.error = null;
         this.output = output;
       },
-      (error: string | Error) => {
+      error: (error: string | Error) => {
         if (error instanceof Error) {
           this.error = error.message;
         } else {
           this.error = error;
         }
-      }
-    );
+      },
+    });
   }
 
   public get input(): string {
