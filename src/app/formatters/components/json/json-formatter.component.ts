@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { LocalStorageService } from 'src/app/core/local-storage.service';
+import { IndentModeChooserComponent } from 'src/app/formatters/components/json/indent-mode-chooser/indent-mode-chooser.component';
 import {
   IndentMode,
   JsonService,
@@ -43,7 +45,8 @@ export class JsonFormatterComponent implements OnInit {
 
   public constructor(
     private jsonService: JsonService,
-    private localStorageService: LocalStorageService
+    private localStorageService: LocalStorageService,
+    private _dialog: MatDialog
   ) {
     this.localStorageService
       .getItem<JsonFormatterPreference>(PREFERENCE_KEY, DEFAULT_PREFERENCE)
@@ -54,6 +57,16 @@ export class JsonFormatterComponent implements OnInit {
 
   public ngOnInit(): void {
     this.input = '{\n}';
+  }
+
+  public openIndentModeChooser(): void {
+    const dialogRef = this._dialog.open(IndentModeChooserComponent, {
+      width: '250px',
+    });
+
+    dialogRef.afterClosed().subscribe((result: IndentMode) => {
+      this.indentMode = result;
+    });
   }
 
   private somthingChanged(): void {

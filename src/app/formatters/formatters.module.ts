@@ -7,9 +7,14 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { JsonFormatterComponent } from 'src/app/formatters/components/json/json-formatter.component';
 import { HighlightModule } from 'ngx-highlightjs';
 import { JsonService } from 'src/app/formatters/services/json.service';
+import { IndentModeChooserComponent } from './components/json/indent-mode-chooser/indent-mode-chooser.component';
 
 @NgModule({
-  declarations: [FormattersComponent, JsonFormatterComponent],
+  declarations: [
+    FormattersComponent,
+    JsonFormatterComponent,
+    IndentModeChooserComponent,
+  ],
   imports: [
     CommonModule,
     FormattersRoutingModule,

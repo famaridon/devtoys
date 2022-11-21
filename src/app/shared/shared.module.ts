@@ -15,6 +15,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { ConfigurationComponent } from './configuration/configuration.component';
 import { InputComponent } from './input/input.component';
 import { OutputComponent } from './output/output.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [ConfigurationComponent, InputComponent, OutputComponent],
@@ -23,6 +24,7 @@ import { OutputComponent } from './output/output.component';
     CommonModule,
     FormsModule,
     MatToolbarModule,
+    MatDialogModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
