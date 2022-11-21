@@ -3,28 +3,28 @@
   <sketch-picker [control]="sketchControl"></sketch-picker>
   <mat-list role="list">
     <mat-list-item role="listitem">
-      <h3 matLine>hex</h3>
-      <span matLine>{{ sketchControl.value.toHexString() }}</span>
-      <span matLine>{{ sketchControl.value.toHexString(true) }}</span>
+      <h3 matListItemTitle>hex</h3>
+      <span matListItemLine>{{ sketchControl.value.toHexString() }}</span>
+      <span matListItemLine>{{ sketchControl.value.toHexString(true) }}</span>
     </mat-list-item>
     <mat-list-item role="listitem">
-      <h3 matLine>rgb</h3>
-      <span matLine>{{ sketchControl.value.toRgbString() }}</span>
-      <span matLine>{{ sketchControl.value.toRgbaString() }}</span>
+      <h3 matListItemTitle>rgb</h3>
+      <span matListItemLine>{{ sketchControl.value.toRgbString() }}</span>
+      <span matListItemLine>{{ sketchControl.value.toRgbaString() }}</span>
     </mat-list-item>
     <mat-list-item role="listitem">
-      <h3 matLine>hsl</h3>
-      <span matLine>{{ sketchControl.value.toHslString() }}</span>
-      <span matLine>{{ sketchControl.value.toHslaString() }}</span>
+      <h3 matListItemTitle>hsl</h3>
+      <span matListItemLine>{{ sketchControl.value.toHslString() }}</span>
+      <span matListItemLine>{{ sketchControl.value.toHslaString() }}</span>
     </mat-list-item>
     <mat-list-item role="listitem">
-      <h3 matLine>hsv</h3>
-      <span matLine>{{ sketchControl.value.toHsvString() }}</span>
-      <span matLine>{{ sketchControl.value.toHsvaString() }}</span>
+      <h3 matListItemTitle>hsv</h3>
+      <span matListItemLine>{{ sketchControl.value.toHsvString() }}</span>
+      <span matListItemLine>{{ sketchControl.value.toHsvaString() }}</span>
     </mat-list-item>
     <mat-list-item role="listitem">
-      <h3 matLine>cmyk</h3>
-      <span matLine>{{ sketchControl.value.toCmykString() }}</span>
+      <h3 matListItemTitle>cmyk</h3>
+      <span matListItemLine>{{ sketchControl.value.toCmykString() }}</span>
     </mat-list-item>
   </mat-list>
 </div>

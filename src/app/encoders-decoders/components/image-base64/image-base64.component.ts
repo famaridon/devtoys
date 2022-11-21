@@ -46,7 +46,7 @@ export class ImageBase64Component {
   ) {
     this.localStorageService
       .getItem(IMAGE_BASE64_PREFERENCE_KEY, DEFAULT_IMAGE_BASE64_PREFERENCE)
-      .subscribe((pref) => (this.encode = pref.encode));
+      .subscribe((pref) => (this._encode = pref.encode));
   }
 
   public openFileChooser(): void {

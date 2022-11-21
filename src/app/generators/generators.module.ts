@@ -8,9 +8,16 @@ import { LoremIpsumComponent } from 'src/app/generators/components/lorem-ipsum/l
 import { UuidComponent } from 'src/app/generators/components/uuid/uuid.component';
 import { LoremIpsumService } from 'src/app/generators/services/lorem-ipsum.service';
 import { UUIDService } from 'src/app/generators/services/uuid.service';
+import { PasswordComponent } from './components/password/password.component';
 
 @NgModule({
-  declarations: [GeneratorsComponent, LoremIpsumComponent, UuidComponent],
+  declarations: [
+    GeneratorsComponent,
+    LoremIpsumComponent,
+    UuidComponent,
+    PasswordComponent,
+  ],
+
   imports: [CommonModule, GeneratorsRoutingModule, SharedModule],
   providers: [LoremIpsumService, UUIDService],
 })

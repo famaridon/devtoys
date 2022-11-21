@@ -3,7 +3,7 @@
 
 @mixin configuration-color($color) {
   .configuration {
-    .mat-list-item {
+    .mat-mdc-list-item {
       background-color: map.get(map.get($color, 'background'), 'card');
       border-color: grey;
     }
@@ -12,7 +12,7 @@
 
 @mixin configuration-theme($theme) {
   .configuration {
-    .mat-list-item {
+    .mat-mdc-list-item {
       border-radius: 5px;
       @include mat.elevation(2);
       margin-bottom: 12px;

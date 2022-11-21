@@ -50,6 +50,11 @@ export class MenuService {
           icon: 'LoremIpsumGenerator.svg',
           label: 'Lorem Ipsum',
         },
+        {
+          path: 'generators/password',
+          icon: 'PasswordGenerator.svg',
+          label: 'Password',
+        },
       ],
     },
     {
