@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { forkJoin, merge } from 'rxjs';
+import { throwError } from 'rxjs';
 import { LocalStorageService } from 'src/app/core/local-storage.service';
 
 describe('LocalStorageService', () => {
