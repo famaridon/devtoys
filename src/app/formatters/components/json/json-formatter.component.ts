@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LocalStorageService } from 'src/app/core/local-storage.service';
-import { IndentModeChooserComponent } from 'src/app/formatters/components/json/indent-mode-chooser/indent-mode-chooser.component';
 import {
   IndentMode,
   JsonService,
 } from 'src/app/formatters/services/json.service';
+import {
+  ListChooserComponent,
+  ListChooserData,
+} from 'src/app/shared/list-chooser/list-chooser.component';
 
 type JsonFormatterPreference = {
   indentMode: IndentMode;
@@ -60,8 +63,17 @@ export class JsonFormatterComponent implements OnInit {
   }
 
   public openIndentModeChooser(): void {
-    const dialogRef = this._dialog.open(IndentModeChooserComponent, {
+    const listChooserData: ListChooserData<IndentMode> = {
+      title: 'Choose the indentition method',
+      options: [
+        { value: '2-spaces', label: '2 spaces' },
+        { value: '4-spaces', label: '4 spaces' },
+        { value: 'tabs', label: 'tabs' },
+      ],
+    };
+    const dialogRef = this._dialog.open(ListChooserComponent, {
       width: '250px',
+      data: listChooserData,
     });
 
     dialogRef.afterClosed().subscribe((result: IndentMode) => {
