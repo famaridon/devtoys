@@ -1,17 +1,14 @@
 <div class="encoder-decoder">
   <h1>HTML</h1>
   <app-configuration>
-    <mat-list>
-      <mat-list-item>
-        <h4 matListItemTitle>Convertion</h4>
-        <p matListItemLine>
-          <span>Select witch convertion mode you want to use</span>
-        </p>
-        <mat-slide-toggle matListItemMeta [(ngModel)]="encode">{{
-          encode ? "Encode" : "Decode"
-        }}</mat-slide-toggle>
-      </mat-list-item>
-    </mat-list>
+    <app-configuration-option
+      title="Convertion"
+      description="Select witch convertion mode you want to use"
+    >
+      <mat-slide-toggle matListItemMeta [(ngModel)]="encode">{{
+        encode ? "Encode" : "Decode"
+      }}</mat-slide-toggle>
+    </app-configuration-option>
   </app-configuration>
   <app-input [(input)]="input"></app-input>
   <app-output [output]="output"></app-output>

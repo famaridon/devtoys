@@ -16,14 +16,14 @@ import { ConfigurationComponent } from './configuration/configuration.component'
 import { InputComponent } from './input/input.component';
 import { OutputComponent } from './output/output.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ListChooserComponent } from './list-chooser/list-chooser.component';
+import { ConfigurationOptionComponent } from './configuration/configuration-option.component';
 
 @NgModule({
   declarations: [
     ConfigurationComponent,
     InputComponent,
     OutputComponent,
-    ListChooserComponent,
+    ConfigurationOptionComponent,
   ],
   imports: [
     CommonModule,
@@ -50,6 +50,7 @@ import { ListChooserComponent } from './list-chooser/list-chooser.component';
     MatDividerModule,
     MatSelectModule,
     ConfigurationComponent,
+    ConfigurationOptionComponent,
     InputComponent,
     OutputComponent,
   ],

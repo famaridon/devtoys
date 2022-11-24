@@ -1,14 +1,18 @@
 <div>
   <h1>JSON Formater</h1>
   <app-configuration>
-    <mat-list>
-      <a mat-list-item (click)="openIndentModeChooser()">
-        <h4 matListItemTitle>Indentation</h4>
-        <p matListItemLine>
-          <span>Indentied with {{ indentMode }}</span>
-        </p>
-      </a>
-    </mat-list>
+    <app-configuration-option
+      title="Indentation"
+      [description]="'Indentied with' + indentMode"
+    >
+      <mat-form-field>
+        <mat-select [(ngModel)]="indentMode">
+          <mat-option [value]="'2-spaces'">2 spaces</mat-option>
+          <mat-option [value]="'4-spaces'">4 spaces</mat-option>
+          <mat-option [value]="'tabs'">Tabs</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </app-configuration-option>
   </app-configuration>
   <app-input [(input)]="input" [error]="error"></app-input>
   <pre><code [highlight]="output"></code></pre>

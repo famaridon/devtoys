@@ -5,10 +5,6 @@ import {
   IndentMode,
   JsonService,
 } from 'src/app/formatters/services/json.service';
-import {
-  ListChooserComponent,
-  ListChooserData,
-} from 'src/app/shared/list-chooser/list-chooser.component';
 
 type JsonFormatterPreference = {
   indentMode: IndentMode;
@@ -60,25 +56,6 @@ export class JsonFormatterComponent implements OnInit {
 
   public ngOnInit(): void {
     this.input = '{\n}';
-  }
-
-  public openIndentModeChooser(): void {
-    const listChooserData: ListChooserData<IndentMode> = {
-      title: 'Choose the indentition method',
-      options: [
-        { value: '2-spaces', label: '2 spaces' },
-        { value: '4-spaces', label: '4 spaces' },
-        { value: 'tabs', label: 'tabs' },
-      ],
-    };
-    const dialogRef = this._dialog.open(ListChooserComponent, {
-      width: '250px',
-      data: listChooserData,
-    });
-
-    dialogRef.afterClosed().subscribe((result: IndentMode) => {
-      this.indentMode = result;
-    });
   }
 
   private somthingChanged(): void {
