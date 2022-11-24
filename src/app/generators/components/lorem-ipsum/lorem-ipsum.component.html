@@ -26,5 +26,7 @@
   <button mat-raised-button color="primary" (click)="generate()">
     Generate
   </button>
-  <app-output [output]="output"></app-output>
+  <app-output>
+    <pre><code>{{ output }}</code></pre>
+  </app-output>
 </div>

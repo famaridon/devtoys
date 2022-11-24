@@ -23,6 +23,7 @@
 
       display: flex;
       align-items: stretch;
+      flex-direction: column;
 
       pre {
         word-break: break-all;

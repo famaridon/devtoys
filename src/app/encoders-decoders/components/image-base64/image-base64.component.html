@@ -26,7 +26,9 @@
         />
       </div>
     </div>
-    <app-output [output]="base64"></app-output>
+    <app-output>
+      <pre><code>{{ base64 }}</code></pre>
+    </app-output>
   </ng-container>
   <ng-template #decode>
     <div class="section">

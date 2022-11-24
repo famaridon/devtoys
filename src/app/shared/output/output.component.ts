@@ -6,10 +6,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class OutputComponent {
   @Input()
-  public output: string = '';
-
-  @Input()
-  public rows: number = 10;
-
+  public title: String = 'Output';
   public constructor() {}
 }
