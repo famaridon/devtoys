@@ -1,0 +1,38 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+
+@mixin textarea-input-color($color) {
+  .dt-text-area-input {
+    .mat-mdc-form-field {
+        background-color: map.get(map.get($color, 'background'), 'card');
+        border-color: grey;
+    }
+  }
+}
+
+@mixin textarea-input-theme($theme) {
+.dt-text-area-input {
+    .mat-mdc-form-field {
+      border-style: 1px solid;
+      border-radius: 5px;
+      @include mat.elevation(2);
+      
+      padding: 0px;
+
+      margin-bottom: 16px;
+    
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+
+      .mat-mdc-form-field-bottom-align {
+        display: none;
+      }
+    }
+}
+  $color: mat.get-color-config($theme);
+
+  @if $color != null {
+    @include textarea-input-color($color);
+  }
+}

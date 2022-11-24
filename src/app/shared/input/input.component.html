@@ -1,14 +1,12 @@
-<div class="section">
+<div class="dt-text-area-input">
   <h3>Input</h3>
-  <div>
-    <mat-form-field>
-      <textarea
-        matInput
-        name="input"
-        [rows]="rows"
-        [(ngModel)]="input"
-      ></textarea>
-      <mat-error *ngIf="error">{{ error }}</mat-error>
-    </mat-form-field>
-  </div>
+  <mat-form-field>
+    <textarea
+      matInput
+      name="input"
+      [rows]="rows"
+      [(ngModel)]="input"
+    ></textarea>
+    <mat-error *ngIf="error">{{ error }}</mat-error>
+  </mat-form-field>
 </div>

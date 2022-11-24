@@ -2,7 +2,8 @@
 @use '@angular/material' as mat;
 @use 'sass:map';
 @import './scss/_configuration';
-@import './scss/_shared';
+@import './scss/_textarea-input';
+@import './scss/_output';
 html,
 body {
   height: 100%;
@@ -56,7 +57,8 @@ $dark-theme: mat.define-dark-theme(
 @include mat.tabs-theme($light-theme);
 
 @include configuration-theme($light-theme);
-@include shared-theme($light-theme);
+@include textarea-input-theme($light-theme);
+@include output-theme($light-theme);
 
 // Apply the light theme only when the `.dark-theme` CSS class is applied
 // to an ancestor element of the components (such as `body`).
@@ -77,7 +79,8 @@ $dark-theme: mat.define-dark-theme(
   @include mat.tabs-color($dark-theme);
 
   @include configuration-color($dark-theme);
-  @include shared-color($dark-theme);
+  @include textarea-input-color($dark-theme);
+  @include output-color($dark-theme);
 
   mat-nav-list {
     .menu-item {

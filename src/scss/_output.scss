@@ -1,0 +1,38 @@
+@use "@angular/material" as mat;
+@use "sass:map";
+
+@mixin output-color($color) {
+  .dt-output {
+    .dt-output-content {
+      background-color: map.get(map.get($color, "background"), "card");
+      border-color: grey;
+    }
+  }
+}
+
+@mixin output-theme($theme) {
+  .dt-output {
+    .dt-output-content {
+      border-style: 1px solid;
+      border-radius: 5px;
+      @include mat.elevation(2);
+
+      padding: 16px;
+      margin-bottom: 16px;
+      min-height: 60px;
+
+      display: flex;
+      align-items: stretch;
+
+      pre {
+        word-break: break-all;
+        white-space: pre-wrap;
+      }
+    }
+  }
+  $color: mat.get-color-config($theme);
+
+  @if $color != null {
+    @include output-color($color);
+  }
+}
