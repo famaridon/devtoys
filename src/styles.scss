@@ -103,9 +103,16 @@ $dark-theme: mat.define-dark-theme(
   }
 
   @import 'highlight.js/scss/vs2015.scss';
+  .hljs {
+    background-color: map.get(map.get($dark-theme, 'background'), 'card');
+  }
 }
 
 @import 'highlight.js/scss/googlecode.scss';
+
+pre code.hljs {
+  padding: 0px !important ;
+}
 
 input[type=file] {
   display: none;
