@@ -29,6 +29,7 @@
     "html-escaper": "^3.0.3",
     "js-base64": "^3.7.2",
     "lorem-ipsum": "^2.0.8",
+    "mermaid": "^9.2.2",
     "ngx-highlightjs": "^7.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

@@ -37,18 +37,19 @@ export class LocalStorageService {
     return subject;
   }
 
-  public setItem<T>(key: string, newValue: T): void {
+  public setItem<T>(key: string, newValue: T): Observable<T> {
     this._storage.setItem(key, JSON.stringify(newValue));
-    this.publishChange(key, newValue);
+    return this.publishChange(key, newValue);
   }
 
-  private publishChange(key: string, value: any): void {
+  private publishChange(key: string, value: any): Observable<any> {
     let subject = this._subjects.get(key);
     if (!subject) {
       subject = new ReplaySubject<any>(1);
       this._subjects.set(key, subject);
     }
     subject.next(new Proxy(value, new AutoSaveChangeProxyHandler(this, key)));
+    return subject;
   }
 }
 
