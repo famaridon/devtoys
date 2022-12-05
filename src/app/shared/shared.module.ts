@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSliderModule } from '@angular/material/slider';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -49,6 +50,7 @@ import { ConfigurationOptionComponent } from './configuration/configuration-opti
     MatButtonModule,
     MatDividerModule,
     MatSelectModule,
+    MatSliderModule,
     ConfigurationComponent,
     ConfigurationOptionComponent,
     InputComponent,

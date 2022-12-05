@@ -15,9 +15,8 @@ export class LocalStorageService {
       if (!event.key || !event.newValue) {
         return;
       }
-      const subject = this._subjects.get(event.key);
-      if (subject) {
-        subject.next(JSON.parse(event.newValue));
+      if (this._subjects.has(event.key)) {
+        this.publishChange(event.key, JSON.parse(event.newValue));
       }
     };
   }
@@ -31,24 +30,43 @@ export class LocalStorageService {
     this._subjects.set(key, subject);
     let storedValue = this._storage.getItem(key);
     if (storedValue) {
-      subject.next(JSON.parse(storedValue) as T);
+      this.publishChange(key, JSON.parse(storedValue));
     } else {
-      this._storage.setItem(key, JSON.stringify(orDefault));
-      subject.next(orDefault);
+      this.setItem(key, orDefault);
     }
     return subject;
   }
 
-  public setItem<T>(key: string, newValue: T): Observable<T> {
+  public setItem<T>(key: string, newValue: T): void {
+    this._storage.setItem(key, JSON.stringify(newValue));
+    this.publishChange(key, newValue);
+  }
+
+  private publishChange(key: string, value: any): void {
     let subject = this._subjects.get(key);
     if (!subject) {
-      subject = new ReplaySubject<T>(1);
+      subject = new ReplaySubject<any>(1);
       this._subjects.set(key, subject);
     }
-    this._storage.setItem(key, JSON.stringify(newValue));
-    subject.next(newValue);
-    return subject;
+    subject.next(new Proxy(value, new AutoSaveChangeProxyHandler(this, key)));
   }
 }
 
-type Publisher = (newValue: string | null) => void;
+class AutoSaveChangeProxyHandler implements ProxyHandler<any> {
+  public constructor(
+    private _localStorageService: LocalStorageService,
+    private _key: string
+  ) {}
+
+  public set?(
+    target: any,
+    p: string | symbol,
+    newValue: any,
+    receiver: any
+  ): boolean {
+    const updated = { ...target };
+    updated[p] = newValue;
+    this._localStorageService.setItem(this._key, updated);
+    return true;
+  }
+}

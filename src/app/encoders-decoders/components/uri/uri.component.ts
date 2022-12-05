@@ -19,24 +19,7 @@ const DEFAULT_URI_PREFERENCE: UriPreference = {
   templateUrl: './uri.component.html',
 })
 export class UriComponent {
-  private _encode: boolean = true;
-  public get encode(): boolean {
-    return this._encode;
-  }
-  public set encode(value: boolean) {
-    this._encode = value;
-    this.somethingChanged();
-  }
-
-  private _input: string = '';
-  public set input(input: string) {
-    this._input = input;
-    this.somethingChanged();
-  }
-  public get input(): string {
-    return this._input;
-  }
-
+  public options: UriPreference = DEFAULT_URI_PREFERENCE;
   public output: string = '';
 
   public constructor(
@@ -45,25 +28,21 @@ export class UriComponent {
   ) {
     this.localStorageService
       .getItem<UriPreference>(URI_PREFERENCE_KEY, DEFAULT_URI_PREFERENCE)
-      .subscribe((pref) => {
-        this._encode = pref.encode;
-        this._input = pref.input;
+      .subscribe((options) => {
+        this.options = options;
+        this.updateOutput();
       });
   }
 
-  private somethingChanged(): void {
-    this.localStorageService.setItem<UriPreference>(URI_PREFERENCE_KEY, {
-      encode: this._encode,
-      input: this._input,
-    });
-    if (this.encode) {
+  private updateOutput(): void {
+    if (this.options.encode) {
       this.uriService
-        .encode(this._input)
+        .encode(this.options.input)
         .pipe(first())
         .subscribe((output) => (this.output = output));
     } else {
       this.uriService
-        .decode(this._input)
+        .decode(this.options.input)
         .pipe(first())
         .subscribe((output) => (this.output = output));
     }

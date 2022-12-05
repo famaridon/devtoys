@@ -5,12 +5,12 @@
       title="Convertion"
       description="Select witch convertion mode you want to use"
     >
-      <mat-slide-toggle matListItemMeta [(ngModel)]="encode">{{
-        encode ? "Encode" : "Decode"
+      <mat-slide-toggle matListItemMeta [(ngModel)]="options.encode">{{
+        options.encode ? "Encode" : "Decode"
       }}</mat-slide-toggle>
     </app-configuration-option>
   </app-configuration>
-  <ng-container *ngIf="encode; else decode">
+  <ng-container *ngIf="options.encode; else decode">
     <div class="section">
       <h3>Input</h3>
       <div>

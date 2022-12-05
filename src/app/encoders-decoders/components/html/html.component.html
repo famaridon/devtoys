@@ -5,12 +5,12 @@
       title="Convertion"
       description="Select witch convertion mode you want to use"
     >
-      <mat-slide-toggle matListItemMeta [(ngModel)]="encode">{{
-        encode ? "Encode" : "Decode"
+      <mat-slide-toggle matListItemMeta [(ngModel)]="options.encode">{{
+        options.encode ? "Encode" : "Decode"
       }}</mat-slide-toggle>
     </app-configuration-option>
   </app-configuration>
-  <app-input [(input)]="input"></app-input>
+  <app-input [(input)]="options.input"></app-input>
   <app-output>
     <pre><code>{{ output }}</code></pre>
   </app-output>

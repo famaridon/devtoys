@@ -19,47 +19,24 @@ const DEFAULT_PREFERENCE: LoremIpsumPreference = {
   templateUrl: './lorem-ipsum.component.html',
 })
 export class LoremIpsumComponent {
+  public options: LoremIpsumPreference = DEFAULT_PREFERENCE;
   public output: string = '';
-  private _unit: LoremUnit = 'paragraphs';
-  public get unit(): LoremUnit {
-    return this._unit;
-  }
-  public set unit(value: LoremUnit) {
-    this._unit = value;
-    this.settingsChanged();
-  }
-  private _count: number = 1;
-  public get count(): number {
-    return this._count;
-  }
-  public set count(value: number) {
-    this._count = value;
-    this.settingsChanged();
-  }
   public constructor(
     private loremIpsumService: LoremIpsumService,
     private localStorageService: LocalStorageService
   ) {
     this.localStorageService
       .getItem<LoremIpsumPreference>(PREFERENCE_KEY, DEFAULT_PREFERENCE)
-      .subscribe((pref) => {
-        this._unit = pref.unit;
-        this._count = pref.count;
+      .subscribe((options) => {
+        this.options = options;
       });
-  }
-
-  private settingsChanged(): void {
-    this.localStorageService.setItem<LoremIpsumPreference>(PREFERENCE_KEY, {
-      unit: this._unit,
-      count: this._count,
-    });
   }
 
   public generate(): void {
     this.loremIpsumService
       .generate({
-        units: this.unit,
-        count: this.count,
+        units: this.options.unit,
+        count: this.options.count,
         suffix: '\n\r\n\r',
       })
       .subscribe((output) => (this.output = output));

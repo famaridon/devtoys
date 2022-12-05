@@ -23,22 +23,9 @@ const DEFAULT_IMAGE_BASE64_PREFERENCE: ImageBase64Preference = {
   templateUrl: './image-base64.component.html',
 })
 export class ImageBase64Component {
+  public options: ImageBase64Preference = DEFAULT_IMAGE_BASE64_PREFERENCE;
   @ViewChild('fileUpload')
   public fileChooser: ElementRef | null = null;
-
-  private _encode: boolean = true;
-  public get encode(): boolean {
-    return this._encode;
-  }
-  public set encode(value: boolean) {
-    this._encode = value;
-    this.localStorageService.setItem<ImageBase64Preference>(
-      IMAGE_BASE64_PREFERENCE_KEY,
-      {
-        encode: this._encode,
-      }
-    );
-  }
   public base64: string = '';
   public constructor(
     private base64Service: Base64Service,
@@ -46,7 +33,7 @@ export class ImageBase64Component {
   ) {
     this.localStorageService
       .getItem(IMAGE_BASE64_PREFERENCE_KEY, DEFAULT_IMAGE_BASE64_PREFERENCE)
-      .subscribe((pref) => (this._encode = pref.encode));
+      .subscribe((options) => (this.options = options));
   }
 
   public openFileChooser(): void {

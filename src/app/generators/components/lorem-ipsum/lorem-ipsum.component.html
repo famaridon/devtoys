@@ -6,7 +6,7 @@
       description="paragraph(s), sentence(s), or word(s)"
     >
       <mat-form-field>
-        <mat-select [(ngModel)]="unit">
+        <mat-select [(ngModel)]="options.unit">
           <mat-option [value]="'words'">Words</mat-option>
           <mat-option [value]="'sentences'">Sentences</mat-option>
           <mat-option [value]="'paragraphs'">Paragraphs</mat-option>
@@ -18,7 +18,7 @@
       description="Number of 'words', 'sentences', or 'paragraphs'"
     >
       <mat-form-field>
-        <input matInput type="number" [(ngModel)]="count" />
+        <input matInput type="number" [(ngModel)]="options.count" />
       </mat-form-field>
     </app-configuration-option>
   </app-configuration>

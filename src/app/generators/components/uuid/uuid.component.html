@@ -5,16 +5,16 @@
       title="Hyphens"
       description="Should have hyphens in output"
     >
-      <mat-slide-toggle matListItemMeta [(ngModel)]="hyphens">{{
-        hyphens ? "On" : "Off"
+      <mat-slide-toggle matListItemMeta [(ngModel)]="options.hyphens">{{
+        options.hyphens ? "On" : "Off"
       }}</mat-slide-toggle>
     </app-configuration-option>
     <app-configuration-option
       title="Uppercase"
       description="Should uppercase the output"
     >
-      <mat-slide-toggle matListItemMeta [(ngModel)]="uppercase">{{
-        uppercase ? "On" : "Off"
+      <mat-slide-toggle matListItemMeta [(ngModel)]="options.uppercase">{{
+        options.uppercase ? "On" : "Off"
       }}</mat-slide-toggle>
     </app-configuration-option>
     <app-configuration-option
@@ -22,7 +22,7 @@
       description="Choose the UUID version to generate"
     >
       <mat-form-field>
-        <mat-select [(ngModel)]="version">
+        <mat-select [(ngModel)]="options.version">
           <mat-option [value]="'v1'">v1</mat-option>
           <mat-option [value]="'v4'">v4</mat-option>
         </mat-select>
@@ -30,7 +30,7 @@
     </app-configuration-option>
     <app-configuration-option title="Count" description=" ">
       <mat-form-field>
-        <input matInput type="number" [(ngModel)]="count" />
+        <input matInput type="number" [(ngModel)]="options.count" />
       </mat-form-field>
     </app-configuration-option>
   </app-configuration>

@@ -24,39 +24,7 @@ const DEFAULT_PREFERENCE: UUIDPreference = {
   templateUrl: './uuid.component.html',
 })
 export class UuidComponent {
-  private _uppercase: boolean = false;
-  public get uppercase(): boolean {
-    return this._uppercase;
-  }
-  public set uppercase(value: boolean) {
-    this._uppercase = value;
-    this.settingsChanged();
-  }
-  private _hyphens: boolean = true;
-  public get hyphens(): boolean {
-    return this._hyphens;
-  }
-  public set hyphens(value: boolean) {
-    this._hyphens = value;
-    this.settingsChanged();
-  }
-  private _version: UUIDVersion = 'v4';
-  public get version(): UUIDVersion {
-    return this._version;
-  }
-  public set version(value: UUIDVersion) {
-    this._version = value;
-    this.settingsChanged();
-  }
-  private _count: number = 10;
-  public get count(): number {
-    return this._count;
-  }
-  public set count(value: number) {
-    this._count = value;
-    this.settingsChanged();
-  }
-
+  public options: UUIDPreference = DEFAULT_PREFERENCE;
   public output: string = '';
 
   public constructor(
@@ -65,31 +33,19 @@ export class UuidComponent {
   ) {
     this.localStorageService
       .getItem<UUIDPreference>(PREFERENCE_KEY, DEFAULT_PREFERENCE)
-      .subscribe((pref) => {
-        this._count = pref.count;
-        this._hyphens = pref.hyphens;
-        this._uppercase = pref.uppercase;
-        this._version = pref.version;
+      .subscribe((options) => {
+        this.options = options;
       });
-  }
-
-  private settingsChanged(): void {
-    this.localStorageService.setItem<UUIDPreference>(PREFERENCE_KEY, {
-      count: this._count,
-      hyphens: this._hyphens,
-      uppercase: this._uppercase,
-      version: this._version,
-    });
   }
 
   public generate(): void {
     this.output = '';
     this.uuidService
       .generate({
-        uppercase: this.uppercase,
-        hyphens: this.hyphens,
-        version: this.version,
-        count: this.count,
+        uppercase: this.options.uppercase,
+        hyphens: this.options.hyphens,
+        version: this.options.version,
+        count: this.options.count,
       })
       .subscribe((uuid) => {
         this.output += uuid + '\n';

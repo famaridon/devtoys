@@ -3,10 +3,10 @@
   <app-configuration>
     <app-configuration-option
       title="Indentation"
-      [description]="'Indented with ' + indentMode"
+      [description]="'Indented with ' + options.indentMode"
     >
       <mat-form-field>
-        <mat-select [(ngModel)]="indentMode">
+        <mat-select [(ngModel)]="options.indentMode">
           <mat-option [value]="'2-spaces'">2 spaces</mat-option>
           <mat-option [value]="'4-spaces'">4 spaces</mat-option>
           <mat-option [value]="'tabs'">Tabs</mat-option>
@@ -14,7 +14,7 @@
       </mat-form-field>
     </app-configuration-option>
   </app-configuration>
-  <app-input [(input)]="input" [error]="error"></app-input>
+  <app-input [(input)]="options.input" [error]="error"></app-input>
   <app-output>
     <pre><code [highlight]="output"></code></pre>
   </app-output>

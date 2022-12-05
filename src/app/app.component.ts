@@ -18,7 +18,7 @@ const DEFAULT_THEME_PREFERENCE: ThemePreference = { color: 'light_mode' };
 })
 export class AppComponent implements AfterViewInit {
   public title = 'devtoys';
-  public colorMode: 'light_mode' | 'dark_mode' = 'light_mode';
+  public themePreference: ThemePreference = DEFAULT_THEME_PREFERENCE;
   @ViewChild('drawer')
   public drawer: MatDrawer | null = null;
 
@@ -45,7 +45,7 @@ export class AppComponent implements AfterViewInit {
     this.localStorageService
       .getItem<ThemePreference>('theme', DEFAULT_THEME_PREFERENCE)
       .subscribe((themePreference) => {
-        this.colorMode = themePreference.color;
+        this.themePreference = themePreference;
         this.renderer.removeClass(document.body, 'light_mode');
         this.renderer.removeClass(document.body, 'dark_mode');
         this.renderer.addClass(document.body, themePreference.color);
@@ -74,18 +74,18 @@ export class AppComponent implements AfterViewInit {
 
   public toggleColorMode(): void {
     let newColor: 'dark_mode' | 'light_mode';
-    if (this.colorMode === 'light_mode') {
+    if (this.themePreference.color === 'light_mode') {
       newColor = 'dark_mode';
     } else {
       newColor = 'light_mode';
     }
-    this.localStorageService.setItem<ThemePreference>('theme', {
-      color: newColor,
-    });
+    this.themePreference.color = newColor;
   }
 
   public invertColorMode(): 'light_mode' | 'dark_mode' {
-    return this.colorMode === 'light_mode' ? 'dark_mode' : 'light_mode';
+    return this.themePreference.color === 'light_mode'
+      ? 'dark_mode'
+      : 'light_mode';
   }
 }
 

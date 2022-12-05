@@ -19,23 +19,7 @@ const DEFAULT_HTML_PREFERENCE: HtmlPreference = {
   templateUrl: './html.component.html',
 })
 export class HtmlComponent {
-  private _encode: boolean = true;
-  public get encode(): boolean {
-    return this._encode;
-  }
-  public set encode(value: boolean) {
-    this._encode = value;
-    this.somethingChanged();
-  }
-
-  private _input: string = '';
-  public set input(input: string) {
-    this._input = input;
-    this.somethingChanged();
-  }
-  public get input(): string {
-    return this._input;
-  }
+  public options: HtmlPreference = DEFAULT_HTML_PREFERENCE;
 
   public output: string = '';
 
@@ -45,25 +29,21 @@ export class HtmlComponent {
   ) {
     this.localStorageService
       .getItem<HtmlPreference>(HTML_PREFERENCE_KEY, DEFAULT_HTML_PREFERENCE)
-      .subscribe((pref) => {
-        this._encode = pref.encode;
-        this._input = pref.input;
+      .subscribe((options) => {
+        this.options = options;
+        this.updateOutput();
       });
   }
 
-  private somethingChanged(): void {
-    this.localStorageService.setItem<HtmlPreference>(HTML_PREFERENCE_KEY, {
-      encode: this._encode,
-      input: this._input,
-    });
-    if (this.encode) {
+  private updateOutput(): void {
+    if (this.options.encode) {
       this.htmlService
-        .encode(this._input)
+        .encode(this.options.input)
         .pipe(first())
         .subscribe((output) => (this.output = output));
     } else {
       this.htmlService
-        .decode(this._input)
+        .decode(this.options.input)
         .pipe(first())
         .subscribe((output) => (this.output = output));
     }

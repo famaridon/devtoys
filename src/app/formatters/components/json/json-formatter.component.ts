@@ -8,37 +8,22 @@ import {
 
 type JsonFormatterPreference = {
   indentMode: IndentMode;
+  input: string;
 };
 const PREFERENCE_KEY = 'jsonFormatter';
 
 const DEFAULT_PREFERENCE: JsonFormatterPreference = {
   indentMode: '2-spaces',
+  input: '{\n}',
 };
 
 @Component({
   selector: 'app-json-formatter',
   templateUrl: './json-formatter.component.html',
 })
-export class JsonFormatterComponent implements OnInit {
+export class JsonFormatterComponent {
   public error: string | null = null;
-  private _indentMode: IndentMode = '2-spaces';
-  public get indentMode(): IndentMode {
-    return this._indentMode;
-  }
-  public set indentMode(value: IndentMode) {
-    this._indentMode = value;
-    this.somthingChanged();
-  }
-
-  private _input: string = '';
-  public set input(input: string) {
-    this._input = input;
-    this.somthingChanged();
-  }
-
-  public get input(): string {
-    return this._input;
-  }
+  public options: JsonFormatterPreference = DEFAULT_PREFERENCE;
 
   public output: string = '';
 
@@ -49,21 +34,15 @@ export class JsonFormatterComponent implements OnInit {
   ) {
     this.localStorageService
       .getItem<JsonFormatterPreference>(PREFERENCE_KEY, DEFAULT_PREFERENCE)
-      .subscribe((pref) => {
-        this._indentMode = pref.indentMode;
+      .subscribe((options) => {
+        this.options = options;
+        this.updateOutput();
       });
   }
 
-  public ngOnInit(): void {
-    this.input = '{\n}';
-  }
-
-  private somthingChanged(): void {
-    this.localStorageService.setItem<JsonFormatterPreference>(PREFERENCE_KEY, {
-      indentMode: this._indentMode,
-    });
+  private updateOutput(): void {
     this.jsonService
-      .formatte(this._input, { mode: this._indentMode })
+      .formatte(this.options.input, { mode: this.options.indentMode })
       .subscribe({
         next: (output) => {
           this.error = null;
