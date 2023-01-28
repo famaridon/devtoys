@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-output',
@@ -6,6 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class OutputComponent {
   @Input()
-  public title: String = 'Output';
-  public constructor() {}
+  public title: string = 'Output';
+  public constructor(private clipboard: Clipboard) {}
+
+  public copy(): void {
+    const content = document.getElementById(this.title)?.textContent;
+    if (content != null) {
+      this.clipboard.copy(content);
+    }
+  }
 }

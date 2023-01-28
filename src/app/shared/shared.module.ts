@@ -32,6 +32,7 @@ import { ConfigurationOptionComponent } from './configuration/configuration-opti
     FormsModule,
     MatInputModule,
     MatListModule,
+    MatIconModule,
   ],
   exports: [
     CommonModule,
