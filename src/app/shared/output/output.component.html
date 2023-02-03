@@ -1,6 +1,11 @@
 <div class="dt-output">
-  <h3>{{ title }}</h3>
-  <div class="dt-output-content">
+  <h3>
+    {{ title }}
+    <div (click)="copy()" style="float: right; cursor: pointer">
+      <mat-icon>content_copy</mat-icon>
+    </div>
+  </h3>
+  <div class="dt-output-content" id="{{ title }}">
     <ng-content></ng-content>
   </div>
 </div>
