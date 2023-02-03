@@ -22,6 +22,7 @@ jobs:
           cache: 'npm'
       - run: yarn install --frozen-lockfile
       - name: deploy to gh-pages
+        if: github.ref == 'refs/heads/main'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: yarn deploy
